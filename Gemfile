@@ -62,3 +62,4 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 
 gem 'rails_admin', '~> 2.0'
+gem 'cancancan'
