@@ -30,4 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  global:
+    menu:
+      home: "Home"
+      log_in: "Log In"
+      sign_up: "Sign Up"
+      forgot_password: "Forgot your password?"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+  pages:
+    home:
+      welcome: "Achieve math proficiency"
+      description: "Improve your skills or ask others for help"

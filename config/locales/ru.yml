@@ -1,0 +1,13 @@
+ru:
+  global:
+    menu:
+      home: "Главная"
+      log_in: "Войти"
+      sign_up: "Регистрация"
+      forgot_password: "Забыли пароль?"
+      password: "Пароль"
+      password_confirmation: "Подтверждение пароля"
+  pages:
+    home:
+      welcome: "Достигайте математического мастерства"
+      description: "Улучшайте свои навыки или попросите о помощи у других"

@@ -63,3 +63,4 @@ gem 'omniauth-facebook'
 
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
+gem 'rails-i18n'
