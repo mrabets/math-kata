@@ -12,6 +12,8 @@ import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap'
 import 'stylesheets/application'
 
+global.toastr = require("toastr")
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
