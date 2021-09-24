@@ -16,6 +16,9 @@
   </div><br>
 
   <div class="col-md-3">
+    <%= form.label :subject, class: 'form-label' %>
+    <%= form.text_field :subject, class: 'form-control' %>
+
     <%= form.fields_for :tags do |tag_subform| %>
       <%= tag_subform.label :name, "Tags", class: 'form-label' %>
       <%= tag_subform.text_field :name, class: 'form-control' %><br>

@@ -6,8 +6,11 @@
   Condition: <%= @task.condition %><br>
 </h3>
 
-<p>
-  Tags:
+<p>Subject:
+  <%= @task.subject %>
+</p>
+
+<p>Tags:
   <% @task.tags.each do |tag| %>
     <i><%= tag.name %></i>
   <% end %>
