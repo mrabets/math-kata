@@ -13,6 +13,9 @@
     <%= tag_subform.text_field :name %><br>
   <% end %>
 
+  <%= form.label :images %><br>
+  <%= form.file_field :images, multiple: true %><br>
+
   <br>
   <%= form.submit "Add Task" %>
 <% end %>

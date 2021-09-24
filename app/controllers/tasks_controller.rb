@@ -26,6 +26,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :condition, :answers, tags_attributes: [:id, :name])
+    params.require(:task).permit(:title, :condition, :answers, tags_attributes: [:id, :name], images: [])
   end
 end

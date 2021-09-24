@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show'
 
   resources :users, :only =>[:show]
-  resources :tasks
+  resources :tasks 
 
   scope "(:locale)", locale: /en|ru/ do
     devise_for :users, :path_prefix => 'd', skip: :omniauth_callbacks
@@ -13,8 +13,6 @@ Rails.application.routes.draw do
     root to: 'pages#home'
 
     get 'admin' => 'admin#home'
-
-    
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
