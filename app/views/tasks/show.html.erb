@@ -1,0 +1,14 @@
+<h1>
+  <%= @task.title %>
+</h1>
+
+<h3>
+  Condition: <%= @task.condition %><br>
+</h3>
+
+<p>
+  Tags:
+  <% @task.tags.each do |tag| %>
+    <i><%= tag.name %></i>
+  <% end %>
+</p>

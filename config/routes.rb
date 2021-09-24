@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, only: :omniauth_callbacks, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get '/users/:id', to: 'users#show'
 
-    resources :users, :only =>[:show]
+  resources :users, :only =>[:show]
+  resources :tasks
+
   scope "(:locale)", locale: /en|ru/ do
     devise_for :users, :path_prefix => 'd', skip: :omniauth_callbacks
 
