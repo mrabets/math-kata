@@ -1,0 +1,18 @@
+<%= form_with model: @task do |form| %>
+  <%= form.label :title %><br>
+  <%= form.text_field :title %><br>
+
+  <%= form.label :condition %><br>
+  <%= form.text_area :condition %><br>
+
+  <%= form.label :answers %><br>
+  <%= form.text_area :answers %><br>
+
+  <%= form.fields_for :tags do |tag_subform| %>
+    <%= tag_subform.label :name, "Tags" %><br>
+    <%= tag_subform.text_field :name %><br>
+  <% end %>
+
+  <br>
+  <%= form.submit "Add Task" %>
+<% end %>
