@@ -33,6 +33,7 @@ en:
   global:
     menu:
       home: "Home"
+      new_task: "New Task"
       log_in: "Log In"
       sign_up: "Sign Up"
       forgot_password: "Forgot your password?"
