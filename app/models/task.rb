@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
-  validates :title, :condition, :answers, presence: true 
+  validates :title, :condition, :answers, presence: true
+  validates :answers, answers: true 
 
   belongs_to :user
   has_many   :tags
