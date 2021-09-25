@@ -1,0 +1,11 @@
+<%= search_form_for @q do |f| %>
+  <div class="row g-3">
+    <div class="col">
+        <%= f.label :title_cont %>
+        <%= f.search_field :title_cont %><br>
+    </div>
+  </div>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+  <%= link_to "Show All", tasks_path, class: "btn btn-success" %>
+  <hr>
+<% end %>

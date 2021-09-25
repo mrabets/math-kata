@@ -2,7 +2,10 @@ class TasksController < ApplicationController
   skip_before_action :authenticate_user!, :only => [:index, :show]
 
   def index
-    @tasks = Task.all
+    # @tasks = Task.all
+
+    @q = Task.ransack(params[:q])
+    @tasks = @q.result(distinct: true)
   end
 
   def show
@@ -17,10 +20,6 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build task_params
     @task.answers.delete!(' ')
-
-    # unless @task.subject.empty?
-    #   @task.subject = Subject.find(@task.subject).name
-    # end
 
     if @task.save
       flash[:success] = 'Your task has successfully added'
