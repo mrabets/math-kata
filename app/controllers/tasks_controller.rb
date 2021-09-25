@@ -15,6 +15,7 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build task_params
     @task.answers.delete!(' ')
+    @task.subject = Subject.find(@task.subject).name
 
     if @task.save
       flash[:success] = 'Your post has successfully added'
