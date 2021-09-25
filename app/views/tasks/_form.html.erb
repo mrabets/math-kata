@@ -17,9 +17,7 @@
 
   <div class="col-md-3">
     <%= form.label :subject, class: 'form-label' %>
-    <%#= form.text_field :subject, class: 'form-control' %>
-    <%= form.select :subject, options_for_select(Subject.pluck(:name, :id)),
-     { include_blank: true },  class: "form-select" %><br>
+    <%= form.select :subject, options_for_select(Subject.all.map(&:name)), { include_blank: true }, class: "form-select" %><br>
 
     <%= form.fields_for :tags do |tag_subform| %>
       <%= tag_subform.label :name, "Tags", class: 'form-label' %>

@@ -18,9 +18,9 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build task_params
     @task.answers.delete!(' ')
 
-    unless @task.subject.empty?
-      @task.subject = Subject.find(@task.subject).name
-    end
+    # unless @task.subject.empty?
+    #   @task.subject = Subject.find(@task.subject).name
+    # end
 
     if @task.save
       flash[:success] = 'Your task has successfully added'
@@ -38,11 +38,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.find params[:id]
     @task.answers.delete!(' ')
 
-    unless @task.subject.empty?
-      @task.subject = Subject.find(@task.subject).name
-    end
-
-    if @task.save
+    if @task.update task_params
       flash[:success] = 'Your task has successfully updated'
       redirect_to @task
     else
