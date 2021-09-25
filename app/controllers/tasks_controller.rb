@@ -31,11 +31,11 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = current.user.find params[:id]
+    @task = current_user.tasks.find params[:id]
   end
 
   def update
-    @task = current.user.find params[:id]
+    @task = current_user.tasks.find params[:id]
     @task.answers.delete!(' ')
 
     unless @task.subject.empty?
@@ -48,6 +48,13 @@ class TasksController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @task = current_user.tasks.find params[:id]
+    @task.destroy
+
+    redirect_to tasks_path
   end
 
   private
