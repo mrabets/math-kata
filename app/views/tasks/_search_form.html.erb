@@ -1,11 +1,16 @@
 <%= search_form_for @q do |f| %>
-  <div class="row g-3">
-    <div class="col">
-        <%= f.label :title_cont %>
-        <%= f.search_field :title_cont %><br>
+
+  <div class="form-group">
+    <div class="col-md-3">
+      <%= f.label :title_cont, class: 'form-label' %>
+      <%= f.search_field :title_cont, placeholder: "Search", class: 'form-control' %><br>
+      <%= link_to "Show All", tasks_path, class: "btn btn-primary btn-sm" %>
     </div>
+    
   </div>
-  <%= f.submit "Search", class: "btn btn-primary" %>
-  <%= link_to "Show All", tasks_path, class: "btn btn-success" %>
+  
+  
   <hr>
+
+
 <% end %>
