@@ -2,6 +2,7 @@ ru:
   global:
     menu:
       home: "Главная"
+      tasks: "Задачи"
       new_task: "Создать Задачу"
       log_in: "Войти"
       sign_up: "Регистрация"
