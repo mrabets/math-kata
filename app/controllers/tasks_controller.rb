@@ -1,10 +1,12 @@
 class TasksController < ApplicationController
+  skip_before_action :authenticate_user!, :only => [:index, :show]
+
   def index
-    @tasks = current_user.tasks.all
+    @tasks = Task.all
   end
 
   def show
-    @task = current_user.tasks.find params[:id]
+    @task = Task.find params[:id]
   end
 
   def new
@@ -21,10 +23,30 @@ class TasksController < ApplicationController
     end
 
     if @task.save
-      flash[:success] = 'Your post has successfully added'
+      flash[:success] = 'Your task has successfully added'
       redirect_to @task
     else
       render 'new'
+    end
+  end
+
+  def edit
+    @task = current.user.find params[:id]
+  end
+
+  def update
+    @task = current.user.find params[:id]
+    @task.answers.delete!(' ')
+
+    unless @task.subject.empty?
+      @task.subject = Subject.find(@task.subject).name
+    end
+
+    if @task.save
+      flash[:success] = 'Your task has successfully updated'
+      redirect_to @task
+    else
+      render 'edit'
     end
   end
 

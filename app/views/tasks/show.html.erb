@@ -46,6 +46,10 @@
     </section>
     <% end %>
 
+    <% if @task.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_task_path(@task), class: 'btn btn-primary btn-sm' %>
+    <% end %>
+
   </article>
 </div>
 

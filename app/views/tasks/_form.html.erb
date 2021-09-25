@@ -23,9 +23,10 @@
 
     <%= form.fields_for :tags do |tag_subform| %>
       <%= tag_subform.label :name, "Tags", class: 'form-label' %>
-      <%= tag_subform.text_field :name, class: 'form-control' %><br>
+      <%= tag_subform.text_field :name, class: 'form-control' %>
+      <small class="text-muted">Seperate the tags by ' ; '</small>
     <% end %>
-  </div>
+  </div><br>
 
   <div class="col-md-8">
     <%= form.label :images, class: 'form-label' %>
