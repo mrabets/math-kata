@@ -1,12 +1,15 @@
-<div class="box">
-  <article class="media">
-    <div class="media-content">
-      <div class="content">
-        <p>
-          	
-          <%= comment.message %>
-        </p>
-      </div>
+<div class="media">
+ <p class="float-end"><small><%= time_ago_in_words(comment.created_at) %></small></p>
+  <div class="d-flex align-items-center">
+    <div class="flex-shrink-0">
+      <img class="rounded-circle" src="<%= User.find(comment.user_id).image %>" width="40">
     </div>
-  </article>
-</div>
+    <div class="flex-grow-1 ms-3">
+      <span><%= User.find(comment.user_id).name %></span>      
+    </div>
+    </div>
+
+    <div class="mx-auto" style="width: 700px;">
+        <i><p class="comment-text"><%= comment.message %><br></p></i>
+    </div>
+  </div>
