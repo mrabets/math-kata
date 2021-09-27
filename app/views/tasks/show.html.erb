@@ -51,19 +51,26 @@
       <%= link_to 'Delete', task_path(@task), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
     <% end %>
 
-    <section class="section comments">
-    <div class="container">
-        <h2 class="subtitle is-5"><strong><%= @task.comments.count %></strong> Comments</h2>
-        <%= render @task.comments %>
-        <% if current_user %>
-        <div class="comment-form">
-            <hr />
-            <h3 class="subtitle is-3">Leave a reply</h3>
-             <%= render 'comments/form' %>
+    <section class="comment-section">
+      <h2 class="fw-light">
+          Comments : <%= @task.comments.count %> 
+      </h2><br>
+      <div class="container">
+        <div class="row">           
+            <div class="comments-list">
+              <%= render @task.comments %>
+            </div>  
         </div>
-        <% end %>
-    </div>
-</section>
+      </div>
+        
+      <% if current_user %>
+      <div class="comment-form"><br>
+          <h2 class="fw-light">Leave a reply</h2>
+           <%= render 'comments/form' %>
+      </div>
+      <% end %>
+    </section>
+
   </article>
 </div>
 
