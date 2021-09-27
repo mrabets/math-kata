@@ -1,0 +1,12 @@
+<%= form_with(model: [@task, @task.comments.build]) do |form| %>
+<div class="form-group">
+  
+  <div class="col-md-8">
+    <%= form.label :message, class: 'form-label' %>
+    <%= form.text_field :message, class: 'form-control' %><br>
+
+  </div><br>
+
+  <%= form.submit "Add Comment", class: 'btn btn-primary' %>
+</div>
+<% end %>
