@@ -1,5 +1,11 @@
 @import 'toastr';
 
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+ }
+
 .user_name{
     font-size:14px;
     font-weight: bold;
