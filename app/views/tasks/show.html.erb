@@ -55,11 +55,13 @@
     <div class="container">
         <h2 class="subtitle is-5"><strong><%= @task.comments.count %></strong> Comments</h2>
         <%= render @task.comments %>
+        <% if current_user %>
         <div class="comment-form">
             <hr />
             <h3 class="subtitle is-3">Leave a reply</h3>
              <%= render 'comments/form' %>
         </div>
+        <% end %>
     </div>
 </section>
   </article>

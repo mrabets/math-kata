@@ -3,8 +3,8 @@
     <div class="media-content">
       <div class="content">
         <p>
-          	
-          <%= comment.message %>
+          <%= User.find(comment.user_id).name %><br>
+          <%= comment.message %><br>
         </p>
       </div>
     </div>
