@@ -69,3 +69,7 @@ gem "mini_magick"
 gem 'image_processing'
 
 gem 'ransack'
+
+gem 'jquery-rails'
+gem 'pusher'
+gem 'figaro'
