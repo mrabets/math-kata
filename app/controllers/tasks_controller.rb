@@ -10,6 +10,10 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find params[:id]
+  end
+
+  def answer
+    @task = Task.find params[:id]
 
     @answer = params[:answer]
 
@@ -22,6 +26,8 @@ class TasksController < ApplicationController
         flash[:alert] = 'Wrong answer'
       end
     end
+
+    redirect_to @task
   end
 
   def new

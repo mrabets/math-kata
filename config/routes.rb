@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  post '/tasks/:id', to: 'tasks#show'
+  post '/tasks/:id', to: 'tasks#answer'
 
   scope "(:locale)", locale: /en|ru/ do
     devise_for :users, :path_prefix => 'd', skip: :omniauth_callbacks
