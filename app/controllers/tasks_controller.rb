@@ -10,6 +10,15 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find params[:id]
+    @answer = params[:answer]
+
+    unless @answer.blank?
+      if helpers.correct_answer?(@answer, @task.id)
+        flash[:success] = 'Yes'
+      else
+        flash[:alert] = 'No'
+      end
+    end
   end
 
   def new
