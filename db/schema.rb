@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_28_124836) do
+ActiveRecord::Schema.define(version: 2021_09_29_111247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(version: 2021_09_28_124836) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "task_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "solved_tasks", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "task_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -92,7 +99,6 @@ ActiveRecord::Schema.define(version: 2021_09_28_124836) do
     t.text "image"
     t.boolean "superadmin_role", default: false
     t.boolean "user_role", default: true
-    t.integer "solved_tasks", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

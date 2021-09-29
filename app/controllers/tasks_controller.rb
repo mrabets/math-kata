@@ -19,8 +19,7 @@ class TasksController < ApplicationController
 
     unless @answer.blank?
       if helpers.correct_answer?(@answer, @task.id)
-        current_user.solved_tasks += 1
-        current_user.save
+        current_user.solved_tasks.create! task_id: @task.id
         flash[:success] = 'Correct answer'
       else
         flash[:alert] = 'Wrong answer'
