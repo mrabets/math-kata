@@ -2,8 +2,8 @@
  <img src="<%= @user.image %>" width="150" style="border-radius: 100px;">
   <div class="mt-3">
     <h4><%= @user.name %></h4>
-    <p class="text-secondary mb-1">Number of solved tasks: <%= @user.solved_tasks.count %></p>
-    <p class="text-muted font-size-sm">Number of created tasks: <%= @user.tasks.size %></p> 
+    <p class="text-secondary mb-1"><%= t('users.number_of_solved_tasks') %>: <%= @user.solved_tasks.count %></p>
+    <p class="text-muted font-size-sm"><%= t('users.number_of_created_tasks') %>: <%= @user.tasks.size %></p> 
     
     <% if current_user %>    
       

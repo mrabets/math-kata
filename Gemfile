@@ -63,6 +63,7 @@ gem 'omniauth-facebook'
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 gem 'rails-i18n'
+gem 'devise-i18n'
 
 gem "mini_magick"
 gem 'image_processing'

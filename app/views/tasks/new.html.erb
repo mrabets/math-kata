@@ -1,7 +1,7 @@
 <div class="container">
-	<h1>New Task</h1><br>
+	<h1><%= t('tasks.new_task') %></h1><br>
 
 	<%= render 'form' %><br>
 
-	<%= link_to 'Back', tasks_path, class: 'label label-primary' %>
+	<%= link_to t('global.menu.back'), tasks_path, class: 'label label-primary' %>
 </div>

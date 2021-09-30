@@ -15,12 +15,12 @@
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
         <% if current_user.superadmin_role? %>
-          <li><%= link_to 'Admin Panel', admin_path, :class => 'dropdown-item' %></li>
+          <li><%= link_to t('global.dropdown_menu.admin_panel'), admin_path, :class => 'dropdown-item' %></li>
         <% end %>
-        <li><%= link_to 'Profile', current_user, :class => 'dropdown-item' %></li>
-        <li><%= link_to 'Edit', edit_user_registration_path, :class => 'dropdown-item' %></li>
+        <li><%= link_to t('global.dropdown_menu.profile'), current_user, :class => 'dropdown-item' %></li>
+        <li><%= link_to t('global.dropdown_menu.edit'), edit_user_registration_path, :class => 'dropdown-item' %></li>
         <li><hr class="dropdown-divider"></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %></li>
+        <li><%= link_to t('global.dropdown_menu.logout'), destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %></li>
       </ul>
     </div>
   <% else %>
