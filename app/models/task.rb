@@ -8,4 +8,6 @@ class Task < ApplicationRecord
   accepts_nested_attributes_for :tags
 
   has_many_attached :images
+
+  has_rich_text :condition
 end
