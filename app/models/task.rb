@@ -6,6 +6,7 @@ class Task < ApplicationRecord
   has_many   :comments
   has_many   :tags
   accepts_nested_attributes_for :tags
+  has_many   :ratings
 
   has_many_attached :images
 

@@ -1,0 +1,18 @@
+<%= form_with(model: [@task, @task.ratings.build]) do |form| %>
+	<div class="d-flex">
+		<div class="flex-shrink-0" id = "rating-form" data-score = "<%= get_average_score(@task.id)  %>"></div>
+		<div class="flex-grow-1 ms-3">
+			<%= form.submit "Rate", class: "btn btn-warning btn-sm" %>
+		</div>
+	</div>
+<% end %>
+
+<script>
+  $('#rating-form').raty({
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+ 
+    scoreName: 'rating[score]',
+    half: false,
+  });
+</script>  

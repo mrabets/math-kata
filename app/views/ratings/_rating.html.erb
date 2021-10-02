@@ -1,0 +1,14 @@
+<div 
+  class="rating-score" 
+  data-score = "<%= get_average_score(@task.id) %>">
+</div>
+
+<script>
+  $('.rating-score').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>

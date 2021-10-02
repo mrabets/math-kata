@@ -18,5 +18,18 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+window.$ = window.jQuery = require('jquery'); 
+require('packs/raty')
+
+// window.onload = function() {
+//     if (window.jQuery) {  
+//         // jQuery is loaded  
+//         alert("Yeah!");
+//     } else {
+//         // jQuery is not loaded
+//         alert("Doesn't Work");
+//     }
+// }
+
 require("trix")
 require("@rails/actiontext")
