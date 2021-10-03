@@ -73,3 +73,5 @@ gem 'ransack'
 gem 'jquery-rails'
 gem 'pusher'
 gem 'figaro'
+
+gem "azure-storage-blob", require: false
