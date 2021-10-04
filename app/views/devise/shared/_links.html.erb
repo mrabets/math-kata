@@ -18,8 +18,38 @@
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end %>
 
+
+
+    
+
+
+
 <%- if devise_mapping.omniauthable? %>
+ <div class="d-flex justify-content-start">
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
+    <%= link_to omniauth_authorize_path(resource_name, provider), style: "color: inherit", method: :post do %>
+   
+      
+      <% if provider.eql?(:facebook) %>
+      <div class="p-2">
+        <span class="fa-stack fa-lg">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+        </span>
+      </div>
+      <% elsif provider.eql?(:google_oauth2) %>
+       <div class="p-2">
+        <span class="fa-stack fa-lg">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="fab fa-google fa-stack-1x fa-inverse"></i>
+        </span>
+       </div>
+      <% end %>
+      
+    
+    <% end %>
+
+    <br />
   <% end %>
+   </div>
 <% end %>
