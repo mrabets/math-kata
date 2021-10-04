@@ -2,11 +2,14 @@ Rails.application.routes.draw do
   devise_for :users, only: :omniauth_callbacks, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :tasks do
-    resources :comments
+    resources :comments do
+      resources :likes, only: [:create, :destroy]
+    end
     resources :ratings
   end
 
   post '/tasks/:id', to: 'tasks#answer'
+  put '/tasks/:id', to: 'tasks#answer'
 
   scope "(:locale)", locale: /en|ru/ do
     root to: 'pages#home'

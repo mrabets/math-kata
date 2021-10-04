@@ -22,4 +22,15 @@
     <div class="mx-auto" style="width: 700px;">
         <i><p class="comment-text"><%= comment.message %><br></p></i>
     </div>
+
+    <% pre_like = comment.likes.find { |like| like.user_id == current_user.id} %>
+
+    <% if pre_like %>
+      <%= link_to "Dislike", task_comment_like_path(@task, comment, pre_like), { method: :delete, remote: true } %>
+     
+    <% else %>
+       <%= link_to "Like", task_comment_likes_path(@task, comment), { method: :post, remote: true } %>
+    <% end %>
+
+    <%= "#{comment.likes.count}" %>
   </div>
