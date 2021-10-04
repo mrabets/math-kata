@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   resources :tasks do
     resources :comments do
-      resources :likes, only: [:create, :destroy]
+      member do
+        put "like", to: "comments#like"
+        put 'dislike', to: 'comments#dislike'
+      end
     end
     resources :ratings
   end

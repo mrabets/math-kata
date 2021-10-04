@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
   belongs_to :task
-  has_many :likes, dependent: :destroy
+  acts_as_votable
 
   validates :message, presence: true
 end

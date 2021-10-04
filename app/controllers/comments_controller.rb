@@ -7,6 +7,20 @@ class CommentsController < ApplicationController
     redirect_to @task       
   end
 
+  def like
+    @task = Task.find(params[:task_id])
+    @comment = Comment.find params[:id]
+    @comment.liked_by current_user
+    redirect_to @task
+  end
+
+  def dislike
+    @task = Task.find(params[:task_id])
+    @comment = Comment.find params[:id]
+    @comment.disliked_by current_user
+    redirect_to @task
+  end
+
   def destroy
 
   end

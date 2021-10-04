@@ -4,7 +4,7 @@ module RatingsHelper
   end
 
   def get_average_score(task_id)
-    scores = scores task_id
+    scores = scores(task_id).compact
 
     unless scores.blank?
       return scores.sum.try(:/, scores.size) 
