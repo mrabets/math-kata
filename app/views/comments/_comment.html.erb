@@ -17,23 +17,11 @@
         <span><%= User.find(comment.user_id).email %></span>   
       <% end %>  
     </div>
-    </div>
-
-    <div class="mx-auto" style="width: 700px;">
-        <i><p class="comment-text"><%= comment.message %><br></p></i>
-    </div>
-
-    <%= link_to "Like", like_task_comment_path(@task, comment), method: :put %>
-    <%= link_to "Dislike", dislike_task_comment_path(@task, comment), method: :put %>
-
-    <%# pre_like = comment.likes.find { |like| like.user_id == current_user.id} %>
-
-    <%# if pre_like %>
-      <%#= link_to "Dislike", task_comment_like_path(@task, comment, pre_like), { method: :delete, remote: true } %>
-     
-    <%# else %>
-       <%#= link_to "Like", task_comment_likes_path(@task, comment), { method: :post, remote: true } %>
-    <%# end %>
-
-    <%= comment.weighted_score %>
   </div>
+
+  <div class="mx-auto" style="width: 700px;">
+    <i><p class="comment-text"><%= comment.message %><br></p></i>
+    
+    <%= render 'comments/like', comment: comment %>      
+  </div> 
+</div>
