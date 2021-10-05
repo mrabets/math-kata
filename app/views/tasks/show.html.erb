@@ -46,8 +46,8 @@
           <%= render 'ratings/rating' %>
       <% end %>
       <br><br>
-    <section class="comment-section">
-
+    </section>
+    
     <section class="comment-section">
       <% unless @task.comments.count == 0 %>
         <h2 class="fw-light">
@@ -55,7 +55,7 @@
         </h2><br>
         <div class="container">
           <div class="row">           
-              <div class="comments-list">
+              <div id="comments-list" class="comments-list">
                 <%= render @task.comments %>
               </div>  
           </div>

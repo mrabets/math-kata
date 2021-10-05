@@ -6,7 +6,11 @@ class CommentsController < ApplicationController
     @comment = @task.comments.new comment_params
     @comment.user_id = current_user.id
     @comment.save
-    redirect_to @task       
+
+    respond_to do |format|
+      format.html { redirect_to @task }
+      format.js
+    end
   end
 
   def like
