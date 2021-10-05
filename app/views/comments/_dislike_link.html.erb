@@ -1,0 +1,7 @@
+<%= link_to dislike_task_comment_path(@task, comment), { id: "dislike-#{comment.id}", method: :put, remote: true, style: "text-decoration: none; color: inherit;" } do %>
+ <% unless current_user.disliked? comment %>          
+    <i class="far fa-thumbs-down"></i>   
+  <% else %>
+    <i class="fas fa-thumbs-down"></i>     
+  <% end %>
+<% end %>

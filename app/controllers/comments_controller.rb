@@ -3,33 +3,34 @@ class CommentsController < ApplicationController
   before_action :find_comment, only: [:like, :unlike, :dislike, :undislike]
 
   def create
+    @comment = @task.comments.new comment_params
     @comment.user_id = current_user.id
     @comment.save
     redirect_to @task       
   end
 
   def like
-    @comment.liked_by current_user
-    redirect_to @task
+    unless current_user.liked? @comment
+      @comment.liked_by current_user
+    else
+      @comment.unliked_by current_user
+    end
+
+    render "vote.js.erb" 
   end
 
-  def unlike
-    @comment.unliked_by current_user
-    redirect_to @task
-  end
 
   def dislike
-    @comment.disliked_by current_user
-    redirect_to @task
-  end
+    unless current_user.disliked? @comment
+      @comment.disliked_by current_user
+    else
+      @comment.undisliked_by current_user
+    end
 
-  def undislike
-    @comment.undisliked_by current_user
-    redirect_to @task
+    render "vote.js.erb" 
   end
 
   def destroy
-
   end
 
   private

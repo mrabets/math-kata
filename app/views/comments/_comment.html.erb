@@ -22,6 +22,8 @@
   <div class="mx-auto" style="width: 700px;">
     <i><p class="comment-text"><%= comment.message %><br></p></i>
     
-    <%= render 'comments/like', comment: comment %>      
+    <%= render 'comments/like_link', comment: comment %>
+    <%= render 'comments/like_count', comment: comment %>
+    <%= render 'comments/dislike_link', comment: comment %>
   </div> 
 </div>

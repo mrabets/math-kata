@@ -5,9 +5,7 @@ Rails.application.routes.draw do
     resources :comments do
       member do
         put "like", to: "comments#like"
-        put "unlike", to: "comments#unlike"
         put 'dislike', to: 'comments#dislike'
-        put 'undislike', to: 'comments#undislike'
       end
     end
     resources :ratings
