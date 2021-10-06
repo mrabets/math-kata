@@ -77,3 +77,4 @@ gem 'figaro'
 gem "azure-storage-blob", require: false
 
 gem 'acts_as_votable'
+gem 'pg_search'

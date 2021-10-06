@@ -1,7 +1,14 @@
-<%= link_to like_task_comment_path(@task, comment), { id: "like-#{comment.id}", method: :put, remote: true, style: "text-decoration: none; color: inherit;" } do %>
- <% unless current_user.liked? comment %>          
-    <i class="far fa-thumbs-up"></i>    
-  <% else %>
-    <i class="fas fa-thumbs-up"></i>     
+<% if current_user %>
+  <%= link_to like_task_comment_path(@task, comment), { id: "like-#{comment.id}", method: :put, remote: true, style: "text-decoration: none; color: inherit;" } do %>
+   <% unless current_user.liked? comment %>          
+      <i class="far fa-thumbs-up"></i>    
+    <% else %>
+      <i class="fas fa-thumbs-up"></i>     
+    <% end %>
+  <% end %>
+
+<% else %>
+  <%= link_to new_user_session_path, { style: "text-decoration: none; color: inherit;" } do %>
+    <i class="far fa-thumbs-up"></i>  
   <% end %>
 <% end %>

@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
   end
 
   def like
+
     unless current_user.liked? @comment
       @comment.liked_by current_user
     else

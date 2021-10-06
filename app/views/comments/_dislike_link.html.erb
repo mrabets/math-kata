@@ -1,7 +1,13 @@
-<%= link_to dislike_task_comment_path(@task, comment), { id: "dislike-#{comment.id}", method: :put, remote: true, style: "text-decoration: none; color: inherit;" } do %>
- <% unless current_user.disliked? comment %>          
-    <i class="far fa-thumbs-down"></i>   
-  <% else %>
-    <i class="fas fa-thumbs-down"></i>     
+<% if current_user %>
+  <%= link_to dislike_task_comment_path(@task, comment), { id: "dislike-#{comment.id}", method: :put, remote: true, style: "text-decoration: none; color: inherit;" } do %>
+   <% unless current_user.disliked? comment %>          
+      <i class="far fa-thumbs-down"></i>   
+    <% else %>
+      <i class="fas fa-thumbs-down"></i>     
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to new_user_session_path, { style: "text-decoration: none; color: inherit;" } do %>
+    <i class="far fa-thumbs-down"></i>  
   <% end %>
 <% end %>
