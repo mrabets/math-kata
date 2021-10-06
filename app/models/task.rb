@@ -1,4 +1,6 @@
 class Task < ApplicationRecord
+  include PgSearch
+
   validates :title, :condition, :answers, :subject, presence: true
   validates :answers, answers: true 
 
@@ -11,4 +13,14 @@ class Task < ApplicationRecord
   has_many_attached :images
 
   has_rich_text :condition
-end
+
+  pg_search_scope :search_for, against: %i(title subject), associated_against: {
+    rich_text_condition: [:body],
+    comments: %i(message),
+    tags: %i(name)
+  }, 
+  using: {
+    tsearch: { prefix: true, any_word: true }
+  }
+
+ end
