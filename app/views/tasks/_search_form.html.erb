@@ -1,16 +1,16 @@
-<%= search_form_for @q do |f| %>
+<div class="form-group">
+  <div class="col-md-3">
+      <%= form_tag tasks_path, method: :get, role: 'search', remote: false do %>
+        
+        <div class="input-group">
+          <%= text_field_tag :query, params[:query], placeholder: "Enter search term", class: 'form-control' %><br>
 
-  <div class="form-group">
-    <div class="col-md-3">
-      <%= f.label :title_cont, class: 'form-label' %>
-      <%= f.search_field :title_cont, placeholder: "Search", class: 'form-control' %><br>
-      <%= link_to "Show All", tasks_path, class: "btn btn-primary btn-sm" %>
-    </div>
-    
+          <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+              <i class="fas fa-search"></i>
+          <% end %>
+        </div><br>
+        
+        <%= link_to "Show All", tasks_path, class: "btn btn-warning btn-sm" %>
+      <% end %>
   </div>
-  
-  
-  <hr>
-
-
-<% end %>
+</div><br>  

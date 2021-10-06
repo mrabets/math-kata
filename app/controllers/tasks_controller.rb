@@ -2,10 +2,11 @@ class TasksController < ApplicationController
   skip_before_action :authenticate_user!, :only => [:index, :show]
 
   def index
-    # @tasks = Task.all
-
-    @q = Task.ransack(params[:q])
-    @tasks = @q.result(distinct: true)
+    if params[:query]
+      @tasks = Task.search_for(params[:query])
+    else
+      @tasks = Task.all
+    end
   end
 
   def show
