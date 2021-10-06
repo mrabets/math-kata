@@ -16,25 +16,17 @@
       <div class="container">
       <%= render 'layouts/header' %>
 
-      <% unless flash.empty? %>
-        <script type="text/javascript">
-        <% flash.each do |f| %>
-          <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
-          toastr['<%= type %>']('<%= f[1] %>', '', {
-            "closeButton": true,
-            "positionClass": "toast-top-center", 
-            "onclick": null, 
-            "showDuration": "300", 
-            "hideDuration": "1000", 
-            "timeOut": "2300", 
-            "extendedTimeOut": "1000", 
-            "showEasing": "swing", 
-            "hideEasing": "linear", 
-            "showMethod": "fadeIn", 
-            "progressBar": false,
-            "hideMethod": "fadeOut" });
+      <% if notice %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <%= notice %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% elsif alert %>
+        <div class="alert alert-danger "><%= alert %></div>
+      <% else %>
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
         <% end %>
-        </script>
       <% end %>
 
       <%= yield %>
