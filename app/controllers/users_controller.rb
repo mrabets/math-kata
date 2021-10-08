@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       @user.name = "User-#{@user.id}"
     end
 
-    if current_user
+    if current_user == @user
       @tasks = find_tasks
     end
   end
