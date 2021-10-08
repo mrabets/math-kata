@@ -1,5 +1,21 @@
 class UsersController < ApplicationController
+  before_action :find_user
+
   def show
+    if current_user == @user
+      @q = Task.where(user_id: current_user.id).ransack(params[:q])
+      @tasks = @q.result(distinct: true)
+    end
+  end
+
+  def search
+    show
+    render :show
+  end
+
+  private
+
+  def find_user
     @user = User.find_by_id(params[:id])
     
     if @user.image.nil?
@@ -9,16 +25,7 @@ class UsersController < ApplicationController
     if @user.name.nil?
       @user.name = "User-#{@user.id}"
     end
-
-    if current_user == @user
-      # @tasks = find_tasks
-
-      @q = Task.ransack(params[:q])
-      @tasks = @q.result(distinct: true)
-    end
   end
-
-  # private
 
   # def find_tasks
   #   Task.where(user_id: current_user.id) 

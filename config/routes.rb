@@ -14,9 +14,14 @@ Rails.application.routes.draw do
   post '/tasks/:id', to: 'tasks#answer'
   put '/tasks/:id', to: 'tasks#answer'
 
+  resources :users do
+     member do
+      match 'search' => 'users#search', via: [:get, :post], as: :search
+    end
+  end
+
   scope "(:locale)", locale: /en|ru/ do
-    root to: 'pages#home'
-    resources :users, :only =>[:show]
+    root to: 'pages#home'  
     devise_for :users, :path_prefix => 'd', skip: :omniauth_callbacks
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'    
     get 'admin' => 'admin#home'
