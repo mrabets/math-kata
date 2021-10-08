@@ -11,13 +11,16 @@ class UsersController < ApplicationController
     end
 
     if current_user == @user
-      @tasks = find_tasks
+      # @tasks = find_tasks
+
+      @q = Task.ransack(params[:q])
+      @tasks = @q.result(distinct: true)
     end
   end
 
-  private
+  # private
 
-  def find_tasks
-    Task.where(user_id: current_user.id) 
-  end
+  # def find_tasks
+  #   Task.where(user_id: current_user.id) 
+  # end
 end

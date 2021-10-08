@@ -67,7 +67,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.find params[:id]
     @task.destroy
 
-    redirect_to tasks_path
+    redirect_back(fallback_location: root_path)
   end
 
   private

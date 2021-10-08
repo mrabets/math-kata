@@ -7,22 +7,31 @@
     
     <% if current_user == @user %><br><br> 
       <% unless @tasks.blank? %> 
+
+      <%#= render 'users/search_task_form' %>
+
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Date of creation</th>
-            <th scope="col">Read mode</th>
+            <th scope="col"><%= sort_link(@q, :id, '#') %></th>
+            <th scope="col"><%= sort_link(@q, :title, 'Title') %></th>
+            <th scope="col"><%= sort_link(@q, :subject, 'Subject') %></th>
+            <th scope="col"><%= sort_link(@q, :created_at, 'Date of creation') %></th>
+            <th colspan="3"></th>
           </tr>
         </thead>
         <tbody>
-            <% @tasks.each.with_index(1) do |task, index| %>
+            <% @tasks.each do |task| %>
             <tr>
-              <th scope="row"><%= index %></th>
+              <th scope="row"><%= task.id %></th>
               <td><%= task.title %></td>
+              <td><%= task.subject %></td>
               <td><%= task.created_at.strftime("%d %b %Y, %H:%M") %></td>
-              <td><%= link_to "View", task %></td>
+              <td>
+                <%= link_to "View", task, class: 'link-info' %>
+                <%= link_to 'Edit', edit_task_path(task), class: 'link-warning' %>
+                <%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: "Are you sure?"}, class: "link-danger" %>   
+              </td>
             </tr>
             <% end %>
         </tbody>
