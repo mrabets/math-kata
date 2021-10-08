@@ -9,5 +9,15 @@ class UsersController < ApplicationController
     if @user.name.nil?
       @user.name = "User-#{@user.id}"
     end
+
+    if current_user
+      @tasks = find_tasks
+    end
+  end
+
+  private
+
+  def find_tasks
+    Task.where(user_id: current_user.id) 
   end
 end

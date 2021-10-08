@@ -5,8 +5,27 @@
     <p class="text-secondary mb-1"><%= t('users.number_of_solved_tasks') %>: <%= @user.solved_tasks.count %></p>
     <p class="text-muted font-size-sm"><%= t('users.number_of_created_tasks') %>: <%= @user.tasks.size %></p> 
     
-    <% if current_user %>    
-      
+    <% if current_user %><br><br>  
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Date of creation</th>
+            <th scope="col">Read mode</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tasks.each do |task| %>
+          <tr>
+            <th scope="row"><%= task.id %></th>
+            <td><%= task.title %></td>
+            <td><%= task.created_at.strftime("%d %b %Y, %H:%M") %></td>
+            <td><%= link_to "View", task %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
     <% end %>
   </div>
 </div>
