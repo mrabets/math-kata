@@ -7,6 +7,8 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.save
 
+    # ActionCable.server.broadcast "room_channel", { comment: @comment }
+
     respond_to do |format|
       format.html { redirect_to @task }
       format.js
