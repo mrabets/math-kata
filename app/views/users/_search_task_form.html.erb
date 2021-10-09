@@ -10,7 +10,11 @@
   </div>
 </div>
 <br>
-<%= link_to "Show All", @user, class: "btn btn-info btn-sm" %>
-
+<div class="d-flex flex-column align-items-center text-center">  
+  <div class="flex-shrink-0"> 
+    <%= link_to "Show All", @user, class: "btn btn-info btn-sm" %>
+    <%= link_to "New Task", new_task_path, class: "btn btn-success btn-sm" %>
+  </div>
+</div>
 </div>
 <% end %><br>
