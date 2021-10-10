@@ -3,9 +3,9 @@ en:
     menu:
       home: "Home"
       tasks: "Tasks"
-      new_task: "New Task"
-      log_in: "Log In"
-      sign_up: "Sign Up"
+      new_task: "New task"
+      log_in: "Log in"
+      sign_up: "Sign up"
       forgot_password: "Forgot your password?"
       password: "Password"
       password_confirmation: "Password confirmation"
@@ -32,6 +32,10 @@ en:
     tags: "Tags"
     seperate_the_answers_by: "Seperate the answers by ';'"
     seperate_the_tags_by: "Seperate the answers by ';'"
+    enter_search_term: "Enter search term"
+    show_all: "Show all"
+    new_task: "New task"
+    your_created_tasks: "Your created tasks"
   comments:
     comments: "Comments"
     leave_a_reply: "Leave a reply"

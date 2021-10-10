@@ -7,7 +7,7 @@
     
     <% if current_user == @user %><br><br> 
 
-      <h2>Your created tasks</h2><br>
+      <h2><%= t('tasks.your_created_tasks') %></h2><br>
 
       <%= render 'users/search_task_form' %>
 

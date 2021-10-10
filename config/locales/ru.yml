@@ -32,6 +32,10 @@ ru:
     tags: "Теги"
     seperate_the_answers_by: "Разделяй ответы знаком ';'"
     seperate_the_tags_by: "Разделяй теги знаком ';'"
+    enter_search_term: "Введите поисковый запрос"
+    show_all: "Показать все"
+    new_task: "Новая задача"
+    your_created_tasks: "Ваши созданные задачи"
   comments:
     comments: "Комментарии"
     leave_a_reply: "Оставить комментарий"

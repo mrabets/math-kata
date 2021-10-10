@@ -1,15 +1,17 @@
-<footer class="footer mt-auto py-3 bg-light">
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top footer mt-auto py-3 bg-light">
   <div class="container">
-    <div class="btn-group dropup">
-      <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-        <%= I18n.locale %>
-      </a>
+      <div class="col-md-4 d-flex align-items-center">
+        <div class="btn-group dropup">
+          <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= I18n.locale %>
+          </a>
 
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <li><%= link_to 'English', root_path(locale: :en), class: "dropdown-item" %></li>
-        <li><%= link_to 'Русский', root_path(locale: :ru), class: "dropdown-item" %></li>
-      </ul>
-    </div>
-    <!-- <span class="text-muted">Place sticky footer content here.</span> -->
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><%= link_to 'English', url_for( :locale => 'en' ), class: "dropdown-item" %></li>
+            <li><%= link_to 'Русский', url_for( :locale => 'ru' ), class: "dropdown-item" %></li>
+          </ul>
+        </div>
+      </div>
   </div>
 </footer>
+
