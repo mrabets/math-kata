@@ -2,7 +2,9 @@ class TasksController < ApplicationController
   skip_before_action :authenticate_user!, :only => [:index, :show]
 
   def index
-    if params[:tag]
+    if params[:subject]
+      @tasks = Task.where(subject: params[:subject])
+    elsif params[:tag]
       @tasks = Task.tagged_with(params[:tag])
     elsif params[:query]
       @tasks = Task.search_for(params[:query])

@@ -4,7 +4,7 @@
   <% @tasks.each do |task| %>
     <header class="mb-4">
       <h1 class="fw-bolder mb-1"><%= link_to task.title, task, {style: 'text-decoration:none;  color:inherit'} %></h1>
-      <a class="badge bg-secondary text-decoration-none link-light" href="#!"><%= task.subject %></a>
+      <%= link_to task.subject, subject_path(task.subject), class: "badge bg-secondary text-decoration-none link-light" %>
       <% unless task.tags.blank? %>
       <section><br>
         <p>
