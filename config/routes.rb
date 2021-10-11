@@ -24,7 +24,7 @@ Rails.application.routes.draw do
       resources :ratings
     end
 
-    get 'tags/:tag', to: 'tags#index', as: :tag
+    get 'tags/:tag', to: 'tasks#index', as: :tag
 
     post '/tasks/:id', to: 'tasks#answer'
   end
