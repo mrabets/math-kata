@@ -19,11 +19,8 @@
     <%= form.label t('tasks.subject'), class: 'form-label' %>
     <%= form.select :subject, options_for_select(Subject.all.map(&:name)), { include_blank: true }, class: "form-select" %><br>
 
-    <%= form.fields_for :tags do |tag_subform| %>
-      <%= tag_subform.label :name, t('tasks.tags'), class: 'form-label' %>
-      <%= tag_subform.text_field :name, class: 'form-control' %>
-      <small class="text-muted"><%= t('tasks.seperate_the_tags_by') %></small>
-    <% end %>
+    <%= form.label :tag_list %>
+    <%= form.text_field :tag_list %>
   </div><br>
 
   <br>

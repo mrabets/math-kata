@@ -10,7 +10,7 @@
         <p class="fs-5 mb-4"><%= @task.condition %></p>
     </section>
 
-    <% unless @task.tags.all?{|x| x.name.empty?} %>
+    <% unless @task.tags.blank? %>
     <section>
       <p>
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">

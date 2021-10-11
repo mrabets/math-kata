@@ -32,10 +32,10 @@ class TasksController < ApplicationController
 
   def new
     @task = current_user.tasks.new
-    @task.tags.build
   end 
 
   def create
+    flash[:success] = params
     @task = current_user.tasks.build task_params
     @task.answers.delete!(' ')
 
@@ -73,6 +73,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :condition, :answers, :subject, tags_attributes: [:id, :name], images: [])
+    params.require(:task).permit(:title, :condition, :answers, :subject, :tag_list, images: [])
   end
 end

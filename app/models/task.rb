@@ -6,8 +6,9 @@ class Task < ApplicationRecord
 
   belongs_to :user
   has_many   :comments
-  has_many   :tags
-  accepts_nested_attributes_for :tags
+
+  acts_as_taggable_on :tags
+
   has_many   :ratings
 
   has_many_attached :images
@@ -16,8 +17,7 @@ class Task < ApplicationRecord
 
   pg_search_scope :search_for, against: %i(title subject), associated_against: {
     rich_text_condition: [:body],
-    comments: %i(message),
-    tags: %i(name)
+    comments: %i(message)
   }, 
   using: {
     tsearch: { prefix: true, any_word: true }

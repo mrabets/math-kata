@@ -78,3 +78,6 @@ gem "azure-storage-blob", require: false
 
 gem 'acts_as_votable'
 gem 'pg_search'
+
+gem 'acts-as-taggable-on', '~> 8.0'
+
