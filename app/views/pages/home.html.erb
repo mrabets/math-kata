@@ -1,2 +1,14 @@
+<div id="tag_cloud">
+	<p>
+	  <% tag_cloud @tags, %w(1.0 1.5 2.3 3.5) do |tag, tag_size| %>
+	    <span style="--tag-size: <%= tag_size %>;">
+	    	<%= link_to tag.name, tag_path(tag.name) %>
+	    </span>
+	  <% end %>
+	</p>
+</div>
+
 <h1><%= t 'pages.home.welcome' %></h1>
 <p><%= t 'pages.home.description' %></p>
+
+

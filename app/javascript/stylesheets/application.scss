@@ -14,3 +14,17 @@ body {
 .table {
     text-align: left !important;
 }
+
+#tag_cloud {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    padding: 100px;
+
+
+    span {
+        font-size: calc(1rem * var(--tag-size));
+        text-decoration: none;
+        text-color: inherit;
+    }
+}
