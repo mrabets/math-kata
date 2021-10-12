@@ -22,6 +22,7 @@ ActiveStorage.start()
 
 window.$ = window.jQuery = require('jquery'); 
 require('packs/raty')
+require('packs/custom')
 
 require("trix")
 require("@rails/actiontext")

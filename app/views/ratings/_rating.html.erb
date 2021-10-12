@@ -1,6 +1,6 @@
 <div 
   class="rating-score" 
-  data-score = "<%= get_average_score(@task.id) %>">
+  data-score = "<%= task.ratings.average(:score) %>">
 </div>
 
 <script>
@@ -9,6 +9,7 @@
     score: function() {
       return $(this).attr('data-score');
     },
+    starHalf : '<%= asset_path('star-half.png') %>',
     starOff:  '<%= asset_path('star-off.png') %>',
     starOn : '<%= asset_path('star-on.png') %>'
   });

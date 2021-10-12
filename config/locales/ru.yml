@@ -25,6 +25,8 @@ ru:
   tasks:
     new_task: "Новая Задача"
     add_task: "Добавить Задачу"
+    edit: "Редактировать"
+    delete: "Удалить"
     title: "Заголовок"
     condition: "Условие"
     answers: "Ответы"
@@ -36,6 +38,8 @@ ru:
     show_all: "Показать все"
     new_task: "Новая задача"
     your_created_tasks: "Ваши созданные задачи"
+    solve_task: "Решить задачу"
+    rate: "Оценить"
   comments:
     comments: "Комментарии"
     leave_a_reply: "Оставить комментарий"

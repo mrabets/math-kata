@@ -25,6 +25,8 @@ en:
   tasks:
     new_task: "New Task"
     add_task: "Add Task"
+    edit: "Edit"
+    delete: "Delete"
     title: "Title"
     condition: "Condition"
     answers: "Answers"
@@ -36,6 +38,8 @@ en:
     show_all: "Show all"
     new_task: "New task"
     your_created_tasks: "Your created tasks"
+    solve_task: "Solve the task"
+    rate: "Rate"
   comments:
     comments: "Comments"
     leave_a_reply: "Leave a reply"

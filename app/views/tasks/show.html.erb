@@ -3,9 +3,9 @@
     <header class="mb-4">
         <h1 class="fw-bolder mb-1"><%= @task.title %></h1>
         <div class="text-muted fst-italic mb-2">Added on <%= @task.created_at.strftime("%d %b %Y, %H:%M")
- %> by <%= User.find(@task.user_id).name %> </div>
-        <a class="badge bg-secondary text-decoration-none link-light" href="#!"><%= @task.subject %></a>
-    </header>
+ %> by <%= link_to get_user_by_task_id(@task).name, get_user_by_task_id(@task) %> </div>
+        <%= link_to @task.subject, subject_path(@task.subject), class: "badge bg-secondary text-decoration-none link-light" %>
+   </header>
     <section class="mb-5">
         <p class="fs-5 mb-4"><%= @task.condition %></p>
     </section>
@@ -25,14 +25,14 @@
     <% end %><br>
 
     <% if @task.user_id == current_user.try(:id) %>
-      <%= link_to 'Edit', edit_task_path(@task), class: 'btn btn-warning btn-sm' %>
-      <%= link_to 'Delete', task_path(@task), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
+      <%= link_to t('tasks.edit'), edit_task_path(@task), class: 'btn btn-warning btn-sm' %>
+      <%= link_to t('tasks.delete'), task_path(@task), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
     <% elsif current_user %>
 
       <% if current_user.solved_tasks.find_by(task_id: @task.id).nil?%>
         <hr><br>
         <h2 class="fw-light">
-            Solve the task
+            <%= t('tasks.solve_task') %>
         </h2><br>
         <%= render 'tasks/answer_form.html.erb' %>
       <% end %>
@@ -43,7 +43,7 @@
       <% if current_user && current_user.ratings.find_by(task_id: @task.id).nil? %>
           <%= render 'ratings/form' %>
         <% else %>
-          <%= render 'ratings/rating' %>
+          <%= render 'ratings/rating', task: @task %>
       <% end %>
       <br><br>
     </section>

@@ -8,7 +8,13 @@
 	</p>
 </div>
 
-<h1><%= t 'pages.home.welcome' %></h1>
-<p><%= t 'pages.home.description' %></p>
+<div class="col-lg-8">
+	<h1 class="display-4">Last tasks</h1><hr>
+</div>
+<%= render 'tasks/display_tasks.html.erb', tasks: @last_tasks %>
 
-
+<br>
+<div class="col-lg-8">
+	<h1 class="display-4">Most rated tasks</h1><hr>
+</div>
+<%= render 'tasks/display_tasks.html.erb', tasks: @most_rated_tasks %><br>
