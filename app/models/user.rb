@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  validates :email, :password, presence: true
+
   has_many :tasks
   has_many :solved_tasks
   has_many :ratings

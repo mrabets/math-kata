@@ -1,26 +1,27 @@
-<h2><%= t('devise.log_in') %></h2>
+<h2><%= t('devise.sign_in') %></h2><br>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="col-md-3">
+
+  <div class="col">
+    <%= f.label :email, class: "col-form-label" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+  <div class="col">
+    <%= f.label :password, class: "col-form-label" %><br />
+    <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+  </div><br>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="col form-check">
+      <%= f.check_box :remember_me, class: 'form-check-input' %>
+      <%= f.label :remember_me, class: 'form-check-label' %>
     </div>
-  <% end %>
+  <% end %><br>
 
-  <div class="actions">
-    <%= f.submit t('devise.log_in_do') %>
-  </div>
-<% end %>
+  <%= f.submit t('devise.log_in_do'), class: 'btn btn-primary' %>
+</div>
+<% end %><br>
 
 <%= render "devise/shared/links" %>

@@ -3,8 +3,9 @@ class RatingsController < ApplicationController
     @task = Task.find params[:task_id]
     @rating = @task.ratings.new rating_params
     @rating.user_id = current_user.id
-    @rating.save
-    redirect_to @task
+    if @rating.save
+      redirect_to @task
+    end
   end
 
   private

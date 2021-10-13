@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-  skip_before_action :authenticate_user!, :only => [:index, :show]
+  skip_before_action :authenticate_user!, only: %w(index show)
+  before_action :find_task, only: %w(show answer edit update destroy)
 
   def index
     if params[:subject]
@@ -14,12 +15,9 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find params[:id]
   end
 
   def answer
-    @task = Task.find params[:id]
-
     @answer = params[:answer]
 
     unless @answer.blank?
@@ -52,11 +50,9 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = current_user.tasks.find params[:id]
   end
 
   def update
-    @task = current_user.tasks.find params[:id]
     @task.answers.delete!(' ')
 
     if @task.update task_params
@@ -68,13 +64,15 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = current_user.tasks.find params[:id]
     @task.destroy
-
-    redirect_back(fallback_location: root_path)
+    redirect_to root_path
   end
 
   private
+
+  def find_task
+    @task = Task.find params[:id]
+  end
 
   def task_params
     params.require(:task).permit(:title, :condition, :answers, :subject, :tag_list, images: [])

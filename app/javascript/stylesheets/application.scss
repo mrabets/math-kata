@@ -2,9 +2,80 @@
 
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
+$dark-background-color-base : #0d1117;
+$dark-border-color: #21262d;
+
 body {
   font-family: 'Josefin Sans', sans-serif;
- }
+}
+
+body.light {
+  color: black;
+  background-color: white;
+
+  #logo {
+    color: black;
+  }
+
+  #menu-links {
+    a {
+      color: black;
+    }
+  }
+}
+
+body.dark {
+  color: white;
+  background-color: $dark-background-color-base;
+  border-color: $dark-border-color !important;
+
+  #logo {
+    color: white;
+  }
+
+  header {
+    background-color: $dark-background-color-base;
+    border-color: $dark-border-color !important;
+  }
+
+  #menu-links {
+    a {
+      color: white;
+    }
+  }
+
+  #user-dropdown-button {
+    color: white;
+  }
+
+  #comment-form {
+    background-color: $dark-background-color-base !important; 
+  }
+
+  #footer {
+    a {
+        background-color: white !important;
+        color: black;
+    }
+    
+    background-color: $dark-background-color-base !important;
+    border-color: $dark-border-color !important;
+  } 
+
+  #profile-table {
+    color: white !important;
+  } 
+
+  .fa-facebook, .fa-google {
+    color: black;
+  }
+
+  #tag_cloud {
+    a {
+      color: white;
+    }
+  }
+}
 
 .user_name{
     font-size:14px;
@@ -16,15 +87,20 @@ body {
 }
 
 #tag_cloud {
-    max-width: 500px;
-    margin: auto;
-    text-align: center;
-    padding: 100px;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  padding: 100px;
+  
+  span {
+    font-size: calc(1rem * var(--tag-size));
+    text-decoration: none;
+  }
+}
 
-
-    span {
-        font-size: calc(1rem * var(--tag-size));
-        text-decoration: none;
-        text-color: inherit;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color .2s ease-in-out;
 }

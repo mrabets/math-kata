@@ -1,17 +1,17 @@
 class CommentsController < ApplicationController
   before_action :find_task
-  before_action :find_comment, only: [:like, :unlike, :dislike, :undislike]
+  before_action :find_comment, only: [:like, :unlike, :dislike, :undislike, :destroy]
 
   def create
     @comment = @task.comments.new comment_params
     @comment.user_id = current_user.id
-    @comment.save
 
-    # ActionCable.server.broadcast "room_channel", { comment: @comment }
-
-    respond_to do |format|
-      format.html { redirect_to @task }
-      format.js
+    if @comment.save
+      # ActionCable.server.broadcast "room_channel", { comment: @comment }
+      respond_to do |format|
+        format.html { redirect_to @task }
+        format.js
+      end
     end
   end
 
@@ -37,6 +37,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment.destroy
+    redirect_back(fallback_location: root_path)
   end
 
   private

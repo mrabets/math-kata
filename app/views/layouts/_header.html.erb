@@ -1,8 +1,19 @@
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-  <%= link_to 'Math Kata', root_path, :class => 'd-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none fs-4' %>
+  <%= link_to 'Math Kata', root_path, id: 'logo', :class => 'd-flex align-items-center col-md-3 mb-2 mb-md-0 text-decoration-none fs-4' %>
   </a>
 
-  <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+  <ul id="menu-links" class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+     <li>
+      <% if cookies[:theme] == "light" %>
+        <%= link_to root_path(theme: "dark"), class: 'nav-link px-2 link-secondary' do %>
+          <i class="far fa-moon"></i>
+        <% end %>
+      <% else %>
+        <%= link_to root_path(theme: "light"), class: 'nav-link px-2 link-secondary' do %>
+          <i class="far fa-lightbulb"></i>
+        <% end %>
+      <% end %>
+    </li>
     <li><%= link_to t('global.menu.home'), root_path, :class => 'nav-link px-2 link-secondary' %></li>
     <li><%= link_to t('global.menu.tasks'), tasks_path, :class => 'nav-link px-2 link-secondary' %></li>
     <li><%= link_to t('global.menu.new_task'), new_task_path, :class => 'nav-link px-2 link-secondary' %></li>
@@ -10,7 +21,7 @@
 
   <% if user_signed_in? %>
     <div class="dropdown">
-      <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown">
+      <button id="user-dropdown-button" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
         <%= current_user.email %>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
