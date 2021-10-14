@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-// import Turbolinks from "turbolinks"
+import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
@@ -17,7 +17,7 @@ import "@fortawesome/fontawesome-free/css/all"
 global.toastr = require("toastr")
 
 Rails.start()
-// Turbolinks.start()
+Turbolinks.start()
 ActiveStorage.start()
 
 window.$ = window.jQuery = require('jquery'); 

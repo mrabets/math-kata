@@ -49,25 +49,34 @@
     </section>
     
     <section class="comment-section">
-      <% unless @task.comments.count == 0 %>
-        <h2 class="fw-light">
-            <%= t('comments.comments') %> : <%= @task.comments.count %> 
-        </h2><br>
-        <div class="container">
-          <div class="row">           
-              <div id="comments-list" class="comments-list">
-                <%= render @task.comments %>
-              </div>  
+
+      <div id="room-id" data-room-id="<%= @task.id %>">
+
+        <% unless @task.comments.count == 0 %>
+          <h2 class="fw-light">
+              <%= t('comments.comments') %> : <%= @task.comments.count %> 
+          </h2><br>
+          <div class="container">
+            <div class="row">           
+                <div id="comments-list" class="comments-list">
+                  <%= render @task.comments %>
+
+                  <div id="msg-<%= @task.id %>">
+                    
+                  </div>
+                </div>  
+            </div>
           </div>
+        <% end %>
+          
+        <% if current_user %>
+        <div class="comment-form"><br>
+            <h2 class="fw-light"><%= t('comments.leave_a_reply') %></h2>
+             <%= render 'comments/form' %>
         </div>
-      <% end %>
-        
-      <% if current_user %>
-      <div class="comment-form"><br>
-          <h2 class="fw-light"><%= t('comments.leave_a_reply') %></h2>
-           <%= render 'comments/form' %>
+        <% end %>
+
       </div>
-      <% end %>
     </section>
   </article>
 </div>
