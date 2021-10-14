@@ -1,21 +1,20 @@
 class TasksController < ApplicationController
-  skip_before_action :authenticate_user!, only: %w(index show)
-  before_action :find_task, only: %w(show answer edit update destroy)
+  skip_before_action :authenticate_user!, only: %w[index show]
+  before_action :find_task, only: %w[show answer edit update destroy]
 
   def index
-    if params[:subject]
-      @tasks = Task.where(subject: params[:subject])
-    elsif params[:tag]
-      @tasks = Task.tagged_with(params[:tag])
-    elsif params[:query]
-      @tasks = Task.search_for(params[:query])
-    else
-      @tasks = Task.all
-    end
+    @tasks = if params[:subject]
+               Task.where(subject: params[:subject])
+             elsif params[:tag]
+               Task.tagged_with(params[:tag])
+             elsif params[:query]
+               Task.search_for(params[:query])
+             else
+               Task.all
+             end
   end
 
-  def show
-  end
+  def show; end
 
   def answer
     @answer = params[:answer]
@@ -34,7 +33,7 @@ class TasksController < ApplicationController
 
   def new
     @task = current_user.tasks.new
-  end 
+  end
 
   def create
     flash[:success] = params
@@ -49,8 +48,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @task.answers.delete!(' ')

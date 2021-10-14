@@ -1,0 +1,1960 @@
+Inspecting 107 files
+CCCCCWCCCCCCCCCCCCCCCCCCCCCWWCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+Offenses:
+
+Gemfile:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+source 'https://rubygems.org'
+^
+Gemfile:33:28: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:45:3: C: [Correctable] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem rubocop-rails should appear before spring.
+  gem 'rubocop-rails'
+  ^^^^^^^^^^^^^^^^^^^
+Gemfile:57:31: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:60:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "omniauth-rails_csrf_protection"
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:61:1: C: [Correctable] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem omniauth-github should appear before omniauth-rails_csrf_protection.
+gem 'omniauth-github'
+^^^^^^^^^^^^^^^^^^^^^
+Gemfile:63:1: C: [Correctable] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem omniauth-facebook should appear before omniauth-google-oauth2.
+gem 'omniauth-facebook'
+^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:66:1: C: [Correctable] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem cancancan should appear before rails_admin.
+gem 'cancancan'
+^^^^^^^^^^^^^^^
+Gemfile:68:1: C: [Correctable] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem devise-i18n should appear before rails-i18n.
+gem 'devise-i18n'
+^^^^^^^^^^^^^^^^^
+Gemfile:70:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "mini_magick"
+    ^^^^^^^^^^^^^
+Gemfile:71:1: C: [Correctable] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem image_processing should appear before mini_magick.
+gem 'image_processing'
+^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:77:1: C: [Correctable] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem figaro should appear before pusher.
+gem 'figaro'
+^^^^^^^^^^^^
+Gemfile:79:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "azure-storage-blob", require: false
+    ^^^^^^^^^^^^^^^^^^^^
+Rakefile:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+^
+Rakefile:4:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "config/application"
+                 ^^^^^^^^^^^^^^^^^^^^
+app/channels/application_cable/channel.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationCable
+^
+app/channels/application_cable/connection.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationCable
+^
+app/channels/room_channel.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class RoomChannel.
+class RoomChannel < ApplicationCable::Channel
+^^^^^^^^^^^^^^^^^
+app/channels/room_channel.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class RoomChannel < ApplicationCable::Channel
+^
+app/controllers/application_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ApplicationController.
+class ApplicationController < ActionController::Base
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationController < ActionController::Base
+^
+app/controllers/application_controller.rb:7:5: C: Style/GuardClause: Use a guard clause (return unless params[:theme].present?) instead of wrapping the code inside a conditional expression.
+    if params[:theme].present?
+    ^^
+app/controllers/application_controller.rb:19:30: W: [Correctable] Lint/UnusedMethodArgument: Unused method argument - resource. If it's necessary, use _ or _resource as an argument name to indicate that it won't be used. You can also write as after_sign_in_path_for(*) if you want the method to accept any arguments but don't care about them.
+  def after_sign_in_path_for(resource)
+                             ^^^^^^^^
+app/controllers/application_controller.rb:23:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	private
+^
+app/controllers/application_controller.rb:23:2: C: [Correctable] Layout/AccessModifierIndentation: Indent access modifiers like private.
+	private
+ ^^^^^^^
+app/controllers/application_controller.rb:30:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	def set_locale
+^
+app/controllers/application_controller.rb:30:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def set_locale
+^
+app/controllers/application_controller.rb:30:2: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+	def set_locale ...
+ ^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:31:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	  I18n.locale = extract_locale || I18n.default_locale
+^
+app/controllers/application_controller.rb:32:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+app/controllers/application_controller.rb:33:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+app/controllers/application_controller.rb:33:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/application_controller.rb:34:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	def extract_locale
+^
+app/controllers/application_controller.rb:34:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def extract_locale
+^
+app/controllers/application_controller.rb:34:2: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+	def extract_locale ...
+ ^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:35:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	  parsed_locale = params[:locale]
+^
+app/controllers/application_controller.rb:36:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	  I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
+^
+app/controllers/application_controller.rb:37:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+app/controllers/comments_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CommentsController.
+class CommentsController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/comments_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CommentsController < ApplicationController
+^
+app/controllers/comments_controller.rb:3:38: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+  before_action :find_comment, only: [:like, :unlike, :dislike, :undislike, :destroy]
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/comments_controller.rb:9:5: C: Style/GuardClause: Use a guard clause (return unless @comment.save) instead of wrapping the code inside a conditional expression.
+    if @comment.save
+    ^^
+app/controllers/comments_controller.rb:19:5: C: [Correctable] Style/UnlessElse: Do not use unless with else. Rewrite these with the positive case first.
+    unless current_user.liked? @comment ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/comments_controller.rb:25:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    render "vote.js.erb" 
+           ^^^^^^^^^^^^^
+app/controllers/comments_controller.rb:25:25: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    render "vote.js.erb" 
+                        ^
+app/controllers/comments_controller.rb:28:1: C: [Correctable] Layout/EmptyLines: Extra blank line detected.
+app/controllers/comments_controller.rb:29:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 2.
+  def dislike
+  ^^^^^^^^^^^
+app/controllers/comments_controller.rb:30:5: C: [Correctable] Style/UnlessElse: Do not use unless with else. Rewrite these with the positive case first.
+    unless current_user.disliked? @comment ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/comments_controller.rb:36:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    render "vote.js.erb" 
+           ^^^^^^^^^^^^^
+app/controllers/comments_controller.rb:36:25: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    render "vote.js.erb" 
+                        ^
+app/controllers/pages_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class PagesController.
+class PagesController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class PagesController < ApplicationController
+^
+app/controllers/pages_controller.rb:2:43: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+  skip_before_action :authenticate_user!, :only => [:home]
+                                          ^^^^^^^^
+app/controllers/ratings_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class RatingsController.
+class RatingsController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/ratings_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class RatingsController < ApplicationController
+^
+app/controllers/ratings_controller.rb:6:5: C: Style/GuardClause: Use a guard clause (return unless @rating.save) instead of wrapping the code inside a conditional expression.
+    if @rating.save
+    ^^
+app/controllers/ratings_controller.rb:6:5: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if @rating.save
+    ^^
+app/controllers/tasks_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class TasksController.
+class TasksController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^
+app/controllers/tasks_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class TasksController < ApplicationController
+^
+app/controllers/tasks_controller.rb:2:49: C: [Correctable] Style/PercentLiteralDelimiters: %w-literals should be delimited by [ and ].
+  skip_before_action :authenticate_user!, only: %w(index show)
+                                                ^^^^^^^^^^^^^^
+app/controllers/tasks_controller.rb:3:35: C: [Correctable] Style/PercentLiteralDelimiters: %w-literals should be delimited by [ and ].
+  before_action :find_task, only: %w(show answer edit update destroy)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/tasks_controller.rb:6:5: C: [Correctable] Style/ConditionalAssignment: Use the return of the conditional for variable assignment and comparison.
+    if params[:subject] ...
+    ^^^^^^^^^^^^^^^^^^^
+app/controllers/tasks_controller.rb:17:3: C: [Correctable] Style/EmptyMethod: Put empty method definitions on a single line.
+  def show ...
+  ^^^^^^^^
+app/controllers/tasks_controller.rb:37:6: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  end 
+     ^
+app/controllers/tasks_controller.rb:52:3: C: [Correctable] Style/EmptyMethod: Put empty method definitions on a single line.
+  def edit ...
+  ^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Users::OmniauthCallbacksController.
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+^
+app/controllers/users/omniauth_callbacks_controller.rb:1:7: C: [Correctable] Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:3:44: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @user = User.from_omniauth(request.env["omniauth.auth"])
+                                           ^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:7:50: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
+                                                 ^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:9:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      session["devise.facebook_data"] = request.env["omniauth.auth"].except(:extra) # Removing extra as it can overflow some session stores
+              ^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:9:53: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      session["devise.facebook_data"] = request.env["omniauth.auth"].except(:extra) # Removing extra as it can overflow some session stores
+                                                    ^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:9:121: C: Layout/LineLength: Line is too long. [139/120]
+      session["devise.facebook_data"] = request.env["omniauth.auth"].except(:extra) # Removing extra as it can overflow some session stores
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:15:44: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @user = User.from_omniauth(request.env["omniauth.auth"])
+                                           ^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:16:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/users/omniauth_callbacks_controller.rb:18:57: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+      sign_in_and_redirect @user, event: :authentication 
+                                                        ^
+app/controllers/users/omniauth_callbacks_controller.rb:19:50: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      set_flash_message(:notice, :success, kind: "Google") if is_navigational_format?
+                                                 ^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:21:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      session["devise.google_oauth2_data"] = request.env["omniauth.auth"].except!(:extra)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:21:58: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      session["devise.google_oauth2_data"] = request.env["omniauth.auth"].except!(:extra)
+                                                         ^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:29:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+app/controllers/users_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class UsersController.
+class UsersController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class UsersController < ApplicationController
+^
+app/controllers/users_controller.rb:5:5: C: Style/GuardClause: Use a guard clause (return unless current_user == @user) instead of wrapping the code inside a conditional expression.
+    if current_user == @user
+    ^^
+app/controllers/users_controller.rb:20:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/users_controller.rb:22:21: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      @user.image = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" 
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:22:107: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+      @user.image = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" 
+                                                                                                          ^
+app/controllers/users_controller.rb:25:5: C: Style/GuardClause: Use a guard clause (return unless @user.name.nil?) instead of wrapping the code inside a conditional expression.
+    if @user.name.nil?
+    ^^
+app/controllers/users_controller.rb:25:5: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if @user.name.nil?
+    ^^
+app/controllers/users_controller.rb:31:43: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  #   Task.where(user_id: current_user.id) 
+                                          ^
+app/helpers/application_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module ApplicationHelper.
+module ApplicationHelper
+^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/application_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationHelper
+^
+app/helpers/comments_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module CommentsHelper.
+module CommentsHelper
+^^^^^^^^^^^^^^^^^^^^^
+app/helpers/comments_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module CommentsHelper
+^
+app/helpers/pages_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module PagesHelper.
+module PagesHelper
+^^^^^^^^^^^^^^^^^^
+app/helpers/pages_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module PagesHelper
+^
+app/helpers/ratings_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module RatingsHelper.
+module RatingsHelper
+^^^^^^^^^^^^^^^^^^^^
+app/helpers/ratings_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module RatingsHelper
+^
+app/helpers/tasks_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module TasksHelper.
+module TasksHelper
+^^^^^^^^^^^^^^^^^^
+app/helpers/tasks_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module TasksHelper
+^
+app/helpers/tasks_helper.rb:3:5: C: [Correctable] Style/RedundantReturn: Redundant return detected.
+    return User.find task.user_id
+    ^^^^^^
+app/helpers/tasks_helper.rb:7:5: C: [Correctable] Style/RedundantReturn: Redundant return detected.
+    return Task.find(task_id).answers.split(';').any?(current_answer)
+    ^^^^^^
+app/helpers/users_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module UsersHelper.
+module UsersHelper
+^^^^^^^^^^^^^^^^^^
+app/helpers/users_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module UsersHelper
+^
+app/helpers/users_helper.rb:5:7: C: [Correctable] Style/RedundantReturn: Redundant return detected.
+      return facebook
+      ^^^^^^
+app/helpers/users_helper.rb:7:7: C: [Correctable] Style/RedundantReturn: Redundant return detected.
+      return 'google'
+      ^^^^^^
+app/helpers/users_helper.rb:8:8: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    end 
+       ^
+app/jobs/application_job.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationJob < ActiveJob::Base
+^
+app/mailers/application_mailer.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationMailer < ActionMailer::Base
+^
+app/models/ability.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class Ability.
+class Ability
+^^^^^^^^^^^^^
+app/models/ability.rb:7:5: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 4 instead of 6).
+    # Define abilities for the passed in user here. For example:
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/ability.rb:8:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+app/models/ability.rb:9:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+      user ||= User.new # guest user (not logged in)
+  ^^^^
+app/models/application_record.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ApplicationRecord.
+class ApplicationRecord < ActiveRecord::Base
+^^^^^^^^^^^^^^^^^^^^^^^
+app/models/application_record.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationRecord < ActiveRecord::Base
+^
+app/models/comment.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class Comment < ApplicationRecord
+^
+app/models/like.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class Like < ApplicationRecord
+^
+app/models/rating.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class Rating < ApplicationRecord
+^
+app/models/solved_task.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class SolvedTask < ApplicationRecord
+^
+app/models/subject.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class Subject < ApplicationRecord
+^
+app/models/task.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class Task < ApplicationRecord
+^
+app/models/task.rb:5:36: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  validates :answers, answers: true 
+                                   ^
+app/models/task.rb:12:11: C: [Correctable] Layout/ExtraSpacing: Unnecessary spacing detected.
+  has_many   :ratings
+          ^^
+app/models/task.rb:12:11: C: [Correctable] Layout/SpaceBeforeFirstArg: Put one space between the method name and the first argument.
+  has_many   :ratings
+          ^^^
+app/models/task.rb:18:41: C: [Correctable] Style/PercentLiteralDelimiters: %i-literals should be delimited by [ and ].
+  pg_search_scope :search_for, against: %i(title subject), associated_against: {
+                                        ^^^^^^^^^^^^^^^^^
+app/models/task.rb:20:15: C: [Correctable] Style/PercentLiteralDelimiters: %i-literals should be delimited by [ and ].
+    comments: %i(message)
+              ^^^^^^^^^^^
+app/models/task.rb:21:5: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  }, 
+    ^
+app/models/task.rb:22:3: C: [Correctable] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+  using: { ...
+  ^^^^^^^^
+app/models/task.rb:25:1: C: [Correctable] Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+app/models/task.rb:26:2: W: [Correctable] Layout/EndAlignment: end at 26, 1 is not aligned with class at 1, 0.
+ end
+ ^^^
+app/models/user.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class User.
+class User < ApplicationRecord
+^^^^^^^^^^
+app/models/user.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class User < ApplicationRecord
+^
+app/models/user.rb:26:3: C: Metrics/AbcSize: Assignment Branch Condition size for new_with_session is too high. [<5, 17, 6> 18.71/17]
+  def self.new_with_session(params, session) ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:28:15: W: Lint/AssignmentInCondition: Use == if you meant to do a comparison or wrap the expression in parentheses to indicate you meant to assign in a condition.
+      if data = session['devise.github'] && session['devise.github_data']['extra']['raw_info']
+              ^
+app/models/user.rb:29:36: C: [Correctable] Style/SoleNestedConditional: Consider merging nested conditions into outer if conditions.
+        user.email = data['email'] if user.email.blank?
+                                   ^^
+app/models/user.rb:31:15: W: Lint/AssignmentInCondition: Use == if you meant to do a comparison or wrap the expression in parentheses to indicate you meant to assign in a condition.
+      if data = session['devise.google_oauth2'] && session['devise.google_oauth2_data']['extra']['raw_info']
+              ^
+app/models/user.rb:32:36: C: [Correctable] Style/SoleNestedConditional: Consider merging nested conditions into outer if conditions.
+        user.email = data['email'] if user.email.blank?
+                                   ^^
+app/validators/answers_validator.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AnswersValidator.
+class AnswersValidator < ActiveModel::EachValidator
+^^^^^^^^^^^^^^^^^^^^^^
+app/validators/answers_validator.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AnswersValidator < ActiveModel::EachValidator
+^
+app/validators/answers_validator.rb:2:46: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  def validate_each(record, attribute, value) 
+                                             ^
+app/validators/answers_validator.rb:5:5: C: Style/GuardClause: Use a guard clause (return unless splited_value.size > 3) instead of wrapping the code inside a conditional expression.
+    if splited_value.size > 3
+    ^^
+app/validators/answers_validator.rb:5:5: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if splited_value.size > 3
+    ^^
+app/validators/answers_validator.rb:9:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+bin/bundle:11:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "rubygems"
+        ^^^^^^^^^^
+bin/bundle:17:22: C: [Correctable] Style/SpecialGlobalVars: Prefer $PROGRAM_NAME over $0.
+    File.expand_path($0) == File.expand_path(__FILE__)
+                     ^^
+bin/bundle:21:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    ENV["BUNDLER_VERSION"]
+        ^^^^^^^^^^^^^^^^^
+bin/bundle:24:3: C: Metrics/CyclomaticComplexity: Cyclomatic complexity for cli_arg_version is too high. [9/7]
+  def cli_arg_version ...
+  ^^^^^^^^^^^^^^^^^^^
+bin/bundle:24:3: C: Metrics/MethodLength: Method has too many lines. [13/10]
+  def cli_arg_version ...
+  ^^^^^^^^^^^^^^^^^^^
+bin/bundle:24:3: C: Metrics/PerceivedComplexity: Perceived complexity for cli_arg_version is too high. [9/8]
+  def cli_arg_version ...
+  ^^^^^^^^^^^^^^^^^^^
+bin/bundle:26:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return unless "update".start_with?(ARGV.first || " ") # must be running `bundle update`
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:26:19: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    return unless "update".start_with?(ARGV.first || " ") # must be running `bundle update`
+                  ^^^^^^^^
+bin/bundle:26:54: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    return unless "update".start_with?(ARGV.first || " ") # must be running `bundle update`
+                                                     ^^^
+bin/bundle:30:7: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+      if update_index && update_index.succ == i && a =~ Gem::Version::ANCHORED_VERSION_PATTERN
+      ^^
+bin/bundle:33:7: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+      next unless a =~ /\A--bundler(?:[= ](#{Gem::Version::VERSION_PATTERN}))?\z/
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:34:25: C: [Correctable] Style/PerlBackrefs: Prefer Regexp.last_match(1) over $1.
+      bundler_version = $1
+                        ^^
+bin/bundle:41:19: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    gemfile = ENV["BUNDLE_GEMFILE"]
+                  ^^^^^^^^^^^^^^^^
+bin/bundle:44:10: C: [Correctable] Style/ExpandPathArguments: Use expand_path('../Gemfile', __dir__) instead of expand_path('../../Gemfile', __FILE__).
+    File.expand_path("../../Gemfile", __FILE__)
+         ^^^^^^^^^^^
+bin/bundle:44:22: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    File.expand_path("../../Gemfile", __FILE__)
+                     ^^^^^^^^^^^^^^^
+bin/bundle:50:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      when "gems.rb" then gemfile.sub(/\.rb$/, gemfile)
+           ^^^^^^^^^
+bin/bundle:57:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return unless File.file?(lockfile)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:59:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return unless lockfile_contents =~ /\n\nBUNDLED WITH\n\s{2,}(#{Gem::Version::VERSION_PATTERN})\n/
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:66:9: C: [Correctable] Layout/MultilineOperationIndentation: Align the operands of an expression in an assignment spanning multiple lines.
+        bundler_requirement_for(lockfile_version)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:76:81: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    return requirement unless Gem::Version.new(Gem::VERSION) < Gem::Version.new("2.7.0")
+                                                                                ^^^^^^^
+bin/bundle:78:20: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    requirement += ".a" if bundler_gem_version.prerelease?
+                   ^^^^
+bin/bundle:84:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    ENV["BUNDLE_GEMFILE"] ||= gemfile
+        ^^^^^^^^^^^^^^^^
+bin/bundle:91:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      gem "bundler", bundler_requirement
+          ^^^^^^^^^
+bin/bundle:93:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return if gem_error.nil?
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:95:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      require "bundler/version"
+              ^^^^^^^^^^^^^^^^^
+bin/bundle:97:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return if require_error.nil? && Gem::Requirement.new(bundler_requirement).satisfied_by?(Gem::Version.new(Bundler::VERSION))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:97:12: C: [Correctable] Style/IfUnlessModifier: Modifier form of if makes the line too long.
+    return if require_error.nil? && Gem::Requirement.new(bundler_requirement).satisfied_by?(Gem::Version.new(Bundler::VERSION))
+           ^^
+bin/bundle:97:121: C: Layout/LineLength: Line is too long. [127/120]
+    return if require_error.nil? && Gem::Requirement.new(bundler_requirement).satisfied_by?(Gem::Version.new(Bundler::VERSION))
+                                                                                                                        ^^^^^^^
+bin/bundle:98:121: C: Layout/LineLength: Line is too long. [198/120]
+    warn "Activating bundler (#{bundler_requirement}) failed:\n#{gem_error.message}\n\nTo install the version of bundler this project requires, run `gem install bundler -v '#{bundler_requirement}'`"
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:112:1: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+if m.invoked_as_script?
+^^
+bin/bundle:113:21: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  load Gem.bin_path("bundler", "bundle")
+                    ^^^^^^^^^
+bin/bundle:113:32: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  load Gem.bin_path("bundler", "bundle")
+                               ^^^^^^^^
+bin/rails:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/rails:2:23: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+load File.expand_path("spring", __dir__)
+                      ^^^^^^^^
+bin/rails:4:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "../config/boot"
+                 ^^^^^^^^^^^^^^^^
+bin/rails:5:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "rails/commands"
+        ^^^^^^^^^^^^^^^^
+bin/rake:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/rake:2:23: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+load File.expand_path("spring", __dir__)
+                      ^^^^^^^^
+bin/rake:3:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "../config/boot"
+                 ^^^^^^^^^^^^^^^^
+bin/rake:4:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "rake"
+        ^^^^^^
+bin/setup:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/setup:2:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "fileutils"
+        ^^^^^^^^^^^
+bin/spring:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/spring:2:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+if !defined?(Spring) && [nil, "development", "test"].include?(ENV["RAILS_ENV"])
+                              ^^^^^^^^^^^^^
+bin/spring:2:46: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+if !defined?(Spring) && [nil, "development", "test"].include?(ENV["RAILS_ENV"])
+                                             ^^^^^^
+bin/spring:2:67: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+if !defined?(Spring) && [nil, "development", "test"].include?(ENV["RAILS_ENV"])
+                                                                  ^^^^^^^^^^^
+bin/spring:3:7: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  gem "bundler"
+      ^^^^^^^^^
+bin/spring:4:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  require "bundler"
+          ^^^^^^^^^
+bin/spring:7:58: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  Bundler.locked_gems&.specs&.find { |spec| spec.name == "spring" }&.tap do |spring|
+                                                         ^^^^^^^^
+bin/spring:9:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    gem "spring", spring.version
+        ^^^^^^^^
+bin/spring:10:13: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    require "spring/binstub"
+            ^^^^^^^^^^^^^^^^
+bin/webpack:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/webpack:3:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+    ^^^^^^^^^^^
+bin/webpack:3:26: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+                         ^^^^^^^^^^
+bin/webpack:3:41: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+                                        ^^^^^^^^^^^^^
+bin/webpack:4:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["NODE_ENV"]  ||= "development"
+    ^^^^^^^^^^
+bin/webpack:4:22: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["NODE_ENV"]  ||= "development"
+                     ^^^^^^^^^^^^^
+bin/webpack:6:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "pathname"
+        ^^^^^^^^^^
+bin/webpack:7:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
+    ^^^^^^^^^^^^^^^^
+bin/webpack:7:44: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
+                                           ^^^^^^^^^^^^^^^
+bin/webpack:8:3: C: [Correctable] Layout/ArgumentAlignment: Align the arguments of a method call if they span more than one line.
+  Pathname.new(__FILE__).realpath)
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/webpack:10:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "bundler/setup"
+        ^^^^^^^^^^^^^^^
+bin/webpack:12:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "webpacker"
+        ^^^^^^^^^^^
+bin/webpack:13:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "webpacker/webpack_runner"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/webpack:15:29: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+APP_ROOT = File.expand_path("..", __dir__)
+                            ^^^^
+bin/webpack-dev-server:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/webpack-dev-server:3:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+    ^^^^^^^^^^^
+bin/webpack-dev-server:3:26: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+                         ^^^^^^^^^^
+bin/webpack-dev-server:3:41: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+                                        ^^^^^^^^^^^^^
+bin/webpack-dev-server:4:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["NODE_ENV"]  ||= "development"
+    ^^^^^^^^^^
+bin/webpack-dev-server:4:22: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["NODE_ENV"]  ||= "development"
+                     ^^^^^^^^^^^^^
+bin/webpack-dev-server:6:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "pathname"
+        ^^^^^^^^^^
+bin/webpack-dev-server:7:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
+    ^^^^^^^^^^^^^^^^
+bin/webpack-dev-server:7:44: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
+                                           ^^^^^^^^^^^^^^^
+bin/webpack-dev-server:8:3: C: [Correctable] Layout/ArgumentAlignment: Align the arguments of a method call if they span more than one line.
+  Pathname.new(__FILE__).realpath)
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/webpack-dev-server:10:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "bundler/setup"
+        ^^^^^^^^^^^^^^^
+bin/webpack-dev-server:12:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "webpacker"
+        ^^^^^^^^^^^
+bin/webpack-dev-server:13:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "webpacker/dev_server_runner"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/webpack-dev-server:15:29: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+APP_ROOT = File.expand_path("..", __dir__)
+                            ^^^^
+bin/yarn:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/yarn:4:10: C: [Correctable] Style/InverseMethods: Use reject instead of inverting select.
+  yarn = ENV["PATH"].split(File::PATH_SEPARATOR). ...
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/yarn:4:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  yarn = ENV["PATH"].split(File::PATH_SEPARATOR).
+             ^^^^^^
+bin/yarn:4:49: C: [Correctable] Layout/DotPosition: Place the . on the next line, together with the method name.
+  yarn = ENV["PATH"].split(File::PATH_SEPARATOR).
+                                                ^
+bin/yarn:5:5: C: [Correctable] Layout/MultilineMethodCallIndentation: Align select with ENV["PATH"].split(File::PATH_SEPARATOR). on line 4.
+    select { |dir| File.expand_path(dir) != __dir__ }.
+    ^^^^^^
+bin/yarn:5:54: C: [Correctable] Layout/DotPosition: Place the . on the next line, together with the method name.
+    select { |dir| File.expand_path(dir) != __dir__ }.
+                                                     ^
+bin/yarn:6:5: C: [Correctable] Layout/MultilineMethodCallIndentation: Align product with ENV["PATH"].split(File::PATH_SEPARATOR). on line 4.
+    product(["yarn", "yarn.cmd", "yarn.ps1"]).
+    ^^^^^^^
+bin/yarn:6:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    product(["yarn", "yarn.cmd", "yarn.ps1"]).
+             ^^^^^^
+bin/yarn:6:22: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    product(["yarn", "yarn.cmd", "yarn.ps1"]).
+                     ^^^^^^^^^^
+bin/yarn:6:34: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    product(["yarn", "yarn.cmd", "yarn.ps1"]).
+                                 ^^^^^^^^^^
+bin/yarn:6:46: C: [Correctable] Layout/DotPosition: Place the . on the next line, together with the method name.
+    product(["yarn", "yarn.cmd", "yarn.ps1"]).
+                                             ^
+bin/yarn:7:5: C: [Correctable] Layout/MultilineMethodCallIndentation: Align map with ENV["PATH"].split(File::PATH_SEPARATOR). on line 4.
+    map { |dir, file| File.expand_path(file, dir) }.
+    ^^^
+bin/yarn:7:52: C: [Correctable] Layout/DotPosition: Place the . on the next line, together with the method name.
+    map { |dir, file| File.expand_path(file, dir) }.
+                                                   ^
+bin/yarn:8:5: C: [Correctable] Layout/MultilineMethodCallIndentation: Align find with ENV["PATH"].split(File::PATH_SEPARATOR). on line 4.
+    find { |file| File.executable?(file) }
+    ^^^^
+bin/yarn:13:5: C: [Correctable] Style/StderrPuts: Use warn instead of $stderr.puts to allow such output to be disabled.
+    $stderr.puts "Yarn executable was not detected in the system."
+    ^^^^^^^^^^^^
+bin/yarn:13:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    $stderr.puts "Yarn executable was not detected in the system."
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/yarn:14:5: C: [Correctable] Style/StderrPuts: Use warn instead of $stderr.puts to allow such output to be disabled.
+    $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
+    ^^^^^^^^^^^^
+bin/yarn:14:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config.ru:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file is used by Rack-based servers to start the application.
+^
+config.ru:3:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "config/environment"
+                 ^^^^^^^^^^^^^^^^^^^^
+config/application.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require_relative "boot"
+^
+config/application.rb:1:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "boot"
+                 ^^^^^^
+config/application.rb:3:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "rails/all"
+        ^^^^^^^^^^^
+config/application.rb:10:3: C: Style/Documentation: Missing top-level documentation comment for class MathKata::Application.
+  class Application < Rails::Application
+  ^^^^^^^^^^^^^^^^^
+config/application.rb:14:37: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+    config.i18n.available_locales = [:en, :ru]
+                                    ^^^^^^^^^^
+config/boot.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
+^
+config/boot.rb:3:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "bundler/setup" # Set up gems listed in the Gemfile.
+        ^^^^^^^^^^^^^^^
+config/boot.rb:4:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "bootsnap/setup" # Speed up boot time by caching expensive operations.
+        ^^^^^^^^^^^^^^^^
+config/environment.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Load the Rails application.
+^
+config/environment.rb:2:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "application"
+                 ^^^^^^^^^^^^^
+config/environment.rb:6:1: C: [Correctable] Layout/TrailingEmptyLines: 1 trailing blank lines detected.
+config/environments/development.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "active_support/core_ext/integer/time"
+^
+config/environments/development.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "active_support/core_ext/integer/time"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "active_support/core_ext/integer/time"
+^
+config/environments/production.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "active_support/core_ext/integer/time"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:56:22: C: [Correctable] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+  config.log_tags = [ :request_id ]
+                     ^
+config/environments/production.rb:56:34: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+  config.log_tags = [ :request_id ]
+                                 ^
+config/environments/production.rb:91:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+         ^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:92:50: C: [Correctable] Style/GlobalStdStream: Use $stdout instead of STDOUT.
+    logger           = ActiveSupport::Logger.new(STDOUT)
+                                                 ^^^^^^
+config/environments/test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "active_support/core_ext/integer/time"
+^
+config/environments/test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "active_support/core_ext/integer/time"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/application_controller_renderer.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/assets.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/backtrace_silencers.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/backtrace_silencers.rb:8:50: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+Rails.backtrace_cleaner.remove_silencers! if ENV["BACKTRACE"]
+                                                 ^^^^^^^^^^^
+config/initializers/content_security_policy.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/cookies_serializer.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/devise.rb:17:121: C: Layout/LineLength: Line is too long. [154/120]
+  # config.secret_key = 'bb58764abdd43089ac4319998c9113010cbf79fc409fe467f1140da9f9685b7020a7f6b3fc250da529cb4164a46bffc1aca451ddef661da06b73f1e7e7cee790'
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:129:121: C: Layout/LineLength: Line is too long. [150/120]
+  # config.pepper = '095e284f67c8c506e69f58908323f9c1c0d4406d031377ca711b442d2000c72e1c082db4a9a36aeb937145737bf4e91390e040bc59d5fe7868a0c0df29dc43dc'
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:282:121: C: [Correctable] Layout/LineLength: Line is too long. [130/120]
+  config.omniauth :google_oauth2, google_client_id, google_client_secret, scope: 'userinfo.email,userinfo.profile', skip_jwt: true
+                                                                                                                        ^^^^^^^^^^
+config/initializers/devise.rb:283:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+config/initializers/filter_parameter_logging.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/filter_parameter_logging.rb:4:47: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+Rails.application.config.filter_parameters += [ ...
+                                              ^
+config/initializers/inflections.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/mime_types.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/permissions_policy.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Define an application-wide HTTP permissions policy. For further
+^
+config/initializers/pusher.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'pusher'
+^
+config/initializers/pusher.rb:2:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+config/initializers/pusher.rb:3:21: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+Pusher.app_id = ENV["PUSHER_APP_ID"]
+                    ^^^^^^^^^^^^^^^
+config/initializers/pusher.rb:4:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+Pusher.key = ENV["PUSHER_KEY"]
+                 ^^^^^^^^^^^^
+config/initializers/pusher.rb:5:21: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+Pusher.secret = ENV["PUSHER_SECRET"]
+                    ^^^^^^^^^^^^^^^
+config/initializers/pusher.rb:6:22: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+Pusher.cluster = ENV["PUSHER_CLUSTER"]
+                     ^^^^^^^^^^^^^^^^
+config/initializers/pusher.rb:8:24: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+Pusher.encrypted = true
+                       
+config/initializers/rails_admin.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+RailsAdmin.config do |config|
+^
+config/initializers/rails_admin.rb:2:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+config/initializers/wrap_parameters.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/puma.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Puma can serve each request in a thread from an internal thread pool.
+^
+config/puma.rb:7:25: C: [Correctable] Style/RedundantFetchBlock: Use fetch("RAILS_MAX_THREADS", 5) instead of fetch("RAILS_MAX_THREADS") { 5 }.
+max_threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/puma.rb:7:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+max_threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
+                              ^^^^^^^^^^^^^^^^^^^
+config/puma.rb:8:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+min_threads_count = ENV.fetch("RAILS_MIN_THREADS") { max_threads_count }
+                              ^^^^^^^^^^^^^^^^^^^
+config/puma.rb:14:34: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
+                                 ^^^^^^^^^^^
+config/puma.rb:14:47: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
+                                              ^^^^^^^^^^^^^
+config/puma.rb:14:65: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
+                                                                ^^^^^^^^^^^^^
+config/puma.rb:18:10: C: [Correctable] Style/RedundantFetchBlock: Use fetch("PORT", 3000) instead of fetch("PORT") { 3000 }.
+port ENV.fetch("PORT") { 3000 }
+         ^^^^^^^^^^^^^^^^^^^^^^
+config/puma.rb:18:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+port ENV.fetch("PORT") { 3000 }
+               ^^^^^^
+config/puma.rb:22:23: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+environment ENV.fetch("RAILS_ENV") { "development" }
+                      ^^^^^^^^^^^
+config/puma.rb:22:38: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+environment ENV.fetch("RAILS_ENV") { "development" }
+                                     ^^^^^^^^^^^^^
+config/puma.rb:25:19: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
+                  ^^^^^^^^^
+config/puma.rb:25:32: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
+                               ^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+Rails.application.routes.draw do
+^
+config/routes.rb:4:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  scope "(:locale)", locale: /en|ru/ do
+        ^^^^^^^^^^^
+config/routes.rb:5:26: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    root to: 'pages#home'  
+                         ^^
+config/routes.rb:6:24: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    devise_for :users, :path_prefix => 'd', skip: :omniauth_callbacks
+                       ^^^^^^^^^^^^^^^
+config/routes.rb:7:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+config/routes.rb:10:48: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+        match 'search' => 'users#search', via: [:get, :post], as: :search
+                                               ^^^^^^^^^^^^^
+config/routes.rb:14:60: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'    
+                                                           ^^^^
+config/routes.rb:20:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+          put "like", to: "comments#like"
+              ^^^^^^
+config/routes.rb:20:27: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+          put "like", to: "comments#like"
+                          ^^^^^^^^^^^^^^^
+config/spring.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+Spring.watch(
+^
+config/spring.rb:2:3: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  ".ruby-version",
+  ^^^^^^^^^^^^^^^
+config/spring.rb:3:3: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  ".rbenv-vars",
+  ^^^^^^^^^^^^^
+config/spring.rb:4:3: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  "tmp/restart.txt",
+  ^^^^^^^^^^^^^^^^^
+config/spring.rb:5:3: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  "tmp/caching-dev.txt"
+  ^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210921105514_devise_create_users.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class DeviseCreateUsers.
+class DeviseCreateUsers < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210921105514_devise_create_users.rb:7:59: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.string :email,              null: false, default: ""
+                                                          ^^
+db/migrate/20210921105514_devise_create_users.rb:8:59: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.string :encrypted_password, null: false, default: ""
+                                                          ^^
+db/migrate/20210921105514_devise_create_users.rb:35:1: C: [Correctable] Layout/EmptyLines: Extra blank line detected.
+db/migrate/20210921111752_add_omniauth_to_users.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddOmniauthToUsers.
+class AddOmniauthToUsers < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210921111752_add_omniauth_to_users.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddOmniauthToUsers < ActiveRecord::Migration[6.1]
+^
+db/migrate/20210922113637_add_roles_to_users.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddRolesToUsers.
+class AddRolesToUsers < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210922113637_add_roles_to_users.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddRolesToUsers < ActiveRecord::Migration[6.1]
+^
+db/migrate/20210922114446_add_superadmin.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddSuperadmin.
+class AddSuperadmin < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^
+db/migrate/20210922114446_add_superadmin.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddSuperadmin < ActiveRecord::Migration[6.1]
+^
+db/migrate/20210922114446_add_superadmin.rb:4:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        u.email     = 'newrabgo@gmail.com'
+    ^^^^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This migration comes from active_storage (originally 20170806125915)
+^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:3:3: C: Metrics/AbcSize: Assignment Branch Condition size for change is too high. [<3, 22, 0> 22.2/17]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:3:3: C: Metrics/MethodLength: Method has too many lines. [25/10]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:14:16: C: [Correctable] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :key ], unique: true
+               ^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:14:21: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :key ], unique: true
+                    ^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:24:15: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:24:16: C: [Correctable] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
+               ^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:24:58: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
+                                                         ^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:24:68: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:24:121: C: [Correctable] Layout/LineLength: Line is too long. [126/120]
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
+                                                                                                                        ^^^^^^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:32:18: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+      t.index %i[ blob_id variation_digest ], name: "index_active_storage_variant_records_uniqueness", unique: true
+                 ^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:32:43: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+      t.index %i[ blob_id variation_digest ], name: "index_active_storage_variant_records_uniqueness", unique: true
+                                          ^
+db/migrate/20210923183400_create_active_storage_tables.active_storage.rb:32:53: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.index %i[ blob_id variation_digest ], name: "index_active_storage_variant_records_uniqueness", unique: true
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210923203016_create_tasks.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateTasks.
+class CreateTasks < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^
+db/migrate/20210923203016_create_tasks.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateTasks < ActiveRecord::Migration[6.1]
+^
+db/migrate/20210924193443_add_subject_to_tasks.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddSubjectToTasks.
+class AddSubjectToTasks < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210924193443_add_subject_to_tasks.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddSubjectToTasks < ActiveRecord::Migration[6.1]
+^
+db/migrate/20210924200820_create_subjects.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateSubjects.
+class CreateSubjects < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210924200820_create_subjects.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateSubjects < ActiveRecord::Migration[6.1]
+^
+db/migrate/20210927095557_create_comments.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateComments.
+class CreateComments < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210927095557_create_comments.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateComments < ActiveRecord::Migration[6.1]
+^
+db/migrate/20210927100552_add_task_id_to_comments.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddTaskIdToComments.
+class AddTaskIdToComments < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210927100552_add_task_id_to_comments.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddTaskIdToComments < ActiveRecord::Migration[6.1]
+^
+db/migrate/20210928124836_add_solved_tasks_to_users.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddSolvedTasksToUsers.
+class AddSolvedTasksToUsers < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210928124836_add_solved_tasks_to_users.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddSolvedTasksToUsers < ActiveRecord::Migration[6.1]
+^
+db/migrate/20210928140953_create_solved_tasks.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateSolvedTasks.
+class CreateSolvedTasks < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210928140953_create_solved_tasks.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateSolvedTasks < ActiveRecord::Migration[6.1]
+^
+db/migrate/20210929111247_remove_solved_tasks_from_users.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class RemoveSolvedTasksFromUsers.
+class RemoveSolvedTasksFromUsers < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210929111247_remove_solved_tasks_from_users.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class RemoveSolvedTasksFromUsers < ActiveRecord::Migration[6.1]
+^
+db/migrate/20210930101946_create_action_text_tables.action_text.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This migration comes from action_text (originally 20180528164100)
+^
+db/migrate/20210930101946_create_action_text_tables.action_text.rb:11:15: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+      t.index [ :record_type, :record_id, :name ], name: "index_action_text_rich_texts_uniqueness", unique: true
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20210930101946_create_action_text_tables.action_text.rb:11:16: C: [Correctable] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :record_type, :record_id, :name ], name: "index_action_text_rich_texts_uniqueness", unique: true
+               ^
+db/migrate/20210930101946_create_action_text_tables.action_text.rb:11:48: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :record_type, :record_id, :name ], name: "index_action_text_rich_texts_uniqueness", unique: true
+                                               ^
+db/migrate/20210930101946_create_action_text_tables.action_text.rb:11:58: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.index [ :record_type, :record_id, :name ], name: "index_action_text_rich_texts_uniqueness", unique: true
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211001162852_create_ratings.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateRatings.
+class CreateRatings < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^
+db/migrate/20211001162852_create_ratings.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateRatings < ActiveRecord::Migration[6.1]
+^
+db/migrate/20211004141359_acts_as_votable_migration.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ActsAsVotableMigration.
+class ActsAsVotableMigration < ActiveRecord::Migration[6.0]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211004141359_acts_as_votable_migration.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ActsAsVotableMigration < ActiveRecord::Migration[6.0]
+^
+db/migrate/20211004141359_acts_as_votable_migration.rb:4:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+db/migrate/20211004141359_acts_as_votable_migration.rb:5:30: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+      t.references :votable, :polymorphic => true
+                             ^^^^^^^^^^^^^^^
+db/migrate/20211004141359_acts_as_votable_migration.rb:6:28: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+      t.references :voter, :polymorphic => true
+                           ^^^^^^^^^^^^^^^
+db/migrate/20211004141359_acts_as_votable_migration.rb:15:23: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+    add_index :votes, [:voter_id, :voter_type, :vote_scope]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211004141359_acts_as_votable_migration.rb:16:23: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+    add_index :votes, [:votable_id, :votable_type, :vote_scope]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211004142902_add_cached_votes_to_comments.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddCachedVotesToComments.
+class AddCachedVotesToComments < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211004142902_add_cached_votes_to_comments.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddCachedVotesToComments < ActiveRecord::Migration[6.1]
+^
+db/migrate/20211006093354_create_pg_search_documents.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreatePgSearchDocuments.
+class CreatePgSearchDocuments < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211006093354_create_pg_search_documents.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreatePgSearchDocuments < ActiveRecord::Migration[6.1]
+^
+db/migrate/20211006093354_create_pg_search_documents.rb:3:19: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    say_with_time("Creating table for pg_search multisearch") do
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211006093354_create_pg_search_documents.rb:13:19: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    say_with_time("Dropping table for pg_search multisearch") do
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211009125400_remove_condition_from_tasks.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class RemoveConditionFromTasks.
+class RemoveConditionFromTasks < ActiveRecord::Migration[6.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211009125400_remove_condition_from_tasks.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class RemoveConditionFromTasks < ActiveRecord::Migration[6.1]
+^
+db/migrate/20211011102440_acts_as_taggable_on_migration.acts_as_taggable_on_engine.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This migration comes from acts_as_taggable_on_engine (originally 1)
+^
+db/migrate/20211011102440_acts_as_taggable_on_migration.acts_as_taggable_on_engine.rb:8:3: C: Metrics/MethodLength: Method has too many lines. [13/10]
+  def self.up ...
+  ^^^^^^^^^^^
+db/migrate/20211011102440_acts_as_taggable_on_migration.acts_as_taggable_on_engine.rb:30:48: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+    add_index ActsAsTaggableOn.taggings_table, [:taggable_id, :taggable_type, :context], name: 'taggings_taggable_context_idx'
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211011102440_acts_as_taggable_on_migration.acts_as_taggable_on_engine.rb:30:121: C: [Correctable] Layout/LineLength: Line is too long. [126/120]
+    add_index ActsAsTaggableOn.taggings_table, [:taggable_id, :taggable_type, :context], name: 'taggings_taggable_context_idx'
+                                                                                                                        ^^^^^^
+db/migrate/20211011102441_add_missing_unique_indices.acts_as_taggable_on_engine.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This migration comes from acts_as_taggable_on_engine (originally 2)
+^
+db/migrate/20211011102441_add_missing_unique_indices.acts_as_taggable_on_engine.rb:14:15: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+              [:tag_id, :taggable_id, :taggable_type, :context, :tagger_id, :tagger_type],
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211011102441_add_missing_unique_indices.acts_as_taggable_on_engine.rb:24:48: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+    add_index ActsAsTaggableOn.taggings_table, [:taggable_id, :taggable_type, :context], name: 'taggings_taggable_context_idx'
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211011102441_add_missing_unique_indices.acts_as_taggable_on_engine.rb:24:121: C: [Correctable] Layout/LineLength: Line is too long. [126/120]
+    add_index ActsAsTaggableOn.taggings_table, [:taggable_id, :taggable_type, :context], name: 'taggings_taggable_context_idx'
+                                                                                                                        ^^^^^^
+db/migrate/20211011102442_add_taggings_counter_cache_to_tags.acts_as_taggable_on_engine.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This migration comes from acts_as_taggable_on_engine (originally 3)
+^
+db/migrate/20211011102443_add_missing_taggable_index.acts_as_taggable_on_engine.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This migration comes from acts_as_taggable_on_engine (originally 4)
+^
+db/migrate/20211011102443_add_missing_taggable_index.acts_as_taggable_on_engine.rb:9:48: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+    add_index ActsAsTaggableOn.taggings_table, [:taggable_id, :taggable_type, :context], name: 'taggings_taggable_context_idx'
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211011102443_add_missing_taggable_index.acts_as_taggable_on_engine.rb:9:121: C: [Correctable] Layout/LineLength: Line is too long. [126/120]
+    add_index ActsAsTaggableOn.taggings_table, [:taggable_id, :taggable_type, :context], name: 'taggings_taggable_context_idx'
+                                                                                                                        ^^^^^^
+db/migrate/20211011102444_change_collation_for_tag_names.acts_as_taggable_on_engine.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This migration comes from acts_as_taggable_on_engine (originally 5)
+^
+db/migrate/20211011102444_change_collation_for_tag_names.acts_as_taggable_on_engine.rb:11:5: C: Style/GuardClause: Use a guard clause (return unless ActsAsTaggableOn::Utils.using_mysql?) instead of wrapping the code inside a conditional expression.
+    if ActsAsTaggableOn::Utils.using_mysql?
+    ^^
+db/migrate/20211011102444_change_collation_for_tag_names.acts_as_taggable_on_engine.rb:12:121: C: Layout/LineLength: Line is too long. [121/120]
+      execute("ALTER TABLE #{ActsAsTaggableOn.tags_table} MODIFY name varchar(255) CHARACTER SET utf8 COLLATE utf8_bin;")
+                                                                                                                        ^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This migration comes from acts_as_taggable_on_engine (originally 6)
+^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:8:3: C: Metrics/AbcSize: Assignment Branch Condition size for change is too high. [<0, 28, 7> 28.86/17]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:8:3: C: Metrics/CyclomaticComplexity: Cyclomatic complexity for change is too high. [8/7]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:8:3: C: Metrics/MethodLength: Method has too many lines. [11/10]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:10:61: C: [Correctable] Style/IfUnlessModifier: Modifier form of unless makes the line too long.
+    add_index ActsAsTaggableOn.taggings_table, :taggable_id unless index_exists? ActsAsTaggableOn.taggings_table, :taggable_id
+                                                            ^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:10:121: C: [Correctable] Layout/LineLength: Line is too long. [126/120]
+    add_index ActsAsTaggableOn.taggings_table, :taggable_id unless index_exists? ActsAsTaggableOn.taggings_table, :taggable_id
+                                                                                                                        ^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:11:63: C: [Correctable] Style/IfUnlessModifier: Modifier form of unless makes the line too long.
+    add_index ActsAsTaggableOn.taggings_table, :taggable_type unless index_exists? ActsAsTaggableOn.taggings_table, :taggable_type
+                                                              ^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:11:121: C: [Correctable] Layout/LineLength: Line is too long. [130/120]
+    add_index ActsAsTaggableOn.taggings_table, :taggable_type unless index_exists? ActsAsTaggableOn.taggings_table, :taggable_type
+                                                                                                                        ^^^^^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:12:59: C: [Correctable] Style/IfUnlessModifier: Modifier form of unless makes the line too long.
+    add_index ActsAsTaggableOn.taggings_table, :tagger_id unless index_exists? ActsAsTaggableOn.taggings_table, :tagger_id
+                                                          ^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:12:121: C: [Correctable] Layout/LineLength: Line is too long. [122/120]
+    add_index ActsAsTaggableOn.taggings_table, :tagger_id unless index_exists? ActsAsTaggableOn.taggings_table, :tagger_id
+                                                                                                                        ^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:15:59: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+    unless index_exists? ActsAsTaggableOn.taggings_table, [:tagger_id, :tagger_type]
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:16:50: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+      add_index ActsAsTaggableOn.taggings_table, [:tagger_id, :tagger_type]
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:19:5: C: Style/GuardClause: Use a guard clause (if index_exists? ActsAsTaggableOn.taggings_table, [:taggable_id, :taggable_type, :tagger_id, :context], name: 'taggings_idy'; return; end) instead of wrapping the code inside a conditional expression.
+    unless index_exists? ActsAsTaggableOn.taggings_table, [:taggable_id, :taggable_type, :tagger_id, :context], name: 'taggings_idy'
+    ^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:19:59: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+    unless index_exists? ActsAsTaggableOn.taggings_table, [:taggable_id, :taggable_type, :tagger_id, :context], name: 'taggings_idy'
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:19:121: C: [Correctable] Layout/LineLength: Line is too long. [132/120]
+    unless index_exists? ActsAsTaggableOn.taggings_table, [:taggable_id, :taggable_type, :tagger_id, :context], name: 'taggings_idy'
+                                                                                                                        ^^^^^^^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:20:50: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+      add_index ActsAsTaggableOn.taggings_table, [:taggable_id, :taggable_type, :tagger_id, :context], name: 'taggings_idy'
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20211011102445_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb:20:121: C: [Correctable] Layout/LineLength: Line is too long. [123/120]
+      add_index ActsAsTaggableOn.taggings_table, [:taggable_id, :taggable_type, :tagger_id, :context], name: 'taggings_idy'
+                                                                                                                        ^^^
+db/migrate/20211011102446_add_tenant_to_taggings.acts_as_taggable_on_engine.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This migration comes from acts_as_taggable_on_engine (originally 7)
+^
+db/schema.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file is auto-generated from the current state of the database. Instead
+^
+db/schema.rb:13:1: C: Metrics/BlockLength: Block has too many lines. [148/25]
+ActiveRecord::Schema.define(version: 2021_10_11_102446) do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:13:38: C: [Correctable] Style/NumericLiterals: Use underscores(_) as thousands separator and separate every 3 digits with them.
+ActiveRecord::Schema.define(version: 2021_10_11_102446) do
+                                     ^^^^^^^^^^^^^^^^^
+db/schema.rb:14:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+db/schema.rb:16:20: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  enable_extension "plpgsql"
+                   ^^^^^^^^^
+db/schema.rb:18:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "action_text_rich_texts", force: :cascade do |t|
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:19:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "name", null: false
+             ^^^^^^
+db/schema.rb:20:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text "body"
+           ^^^^^^
+db/schema.rb:21:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "record_type", null: false
+             ^^^^^^^^^^^^^
+db/schema.rb:22:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "record_id", null: false
+             ^^^^^^^^^^^
+db/schema.rb:23:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:24:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:25:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:25:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+             ^^^^^^^^^^^^^
+db/schema.rb:25:29: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+                            ^^^^^^^^^^^
+db/schema.rb:25:42: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+                                         ^^^^^^
+db/schema.rb:25:57: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:28:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "active_storage_attachments", force: :cascade do |t|
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:29:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "name", null: false
+             ^^^^^^
+db/schema.rb:30:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "record_type", null: false
+             ^^^^^^^^^^^^^
+db/schema.rb:31:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "record_id", null: false
+             ^^^^^^^^^^^
+db/schema.rb:32:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "blob_id", null: false
+             ^^^^^^^^^
+db/schema.rb:33:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:34:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+             ^^^^^^^^^
+db/schema.rb:34:32: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:35:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:35:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+             ^^^^^^^^^^^^^
+db/schema.rb:35:29: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+                            ^^^^^^^^^^^
+db/schema.rb:35:42: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+                                         ^^^^^^
+db/schema.rb:35:50: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+                                                 ^^^^^^^^^
+db/schema.rb:35:68: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:35:121: C: [Correctable] Layout/LineLength: Line is too long. [126/120]
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+                                                                                                                        ^^^^^^
+db/schema.rb:38:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "active_storage_blobs", force: :cascade do |t|
+               ^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:39:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "key", null: false
+             ^^^^^
+db/schema.rb:40:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "filename", null: false
+             ^^^^^^^^^^
+db/schema.rb:41:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "content_type"
+             ^^^^^^^^^^^^^^
+db/schema.rb:42:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text "metadata"
+           ^^^^^^^^^^
+db/schema.rb:43:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "service_name", null: false
+             ^^^^^^^^^^^^^^
+db/schema.rb:44:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "byte_size", null: false
+             ^^^^^^^^^^^
+db/schema.rb:45:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "checksum", null: false
+             ^^^^^^^^^^
+db/schema.rb:46:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:47:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+             ^^^^^
+db/schema.rb:47:28: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:50:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "active_storage_variant_records", force: :cascade do |t|
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:51:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "blob_id", null: false
+             ^^^^^^^^^
+db/schema.rb:52:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "variation_digest", null: false
+             ^^^^^^^^^^^^^^^^^^
+db/schema.rb:53:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:53:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+             ^^^^^^^^^
+db/schema.rb:53:25: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+                        ^^^^^^^^^^^^^^^^^^
+db/schema.rb:53:52: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:56:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "comments", force: :cascade do |t|
+               ^^^^^^^^^^
+db/schema.rb:57:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text "message"
+           ^^^^^^^^^
+db/schema.rb:58:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "user_id"
+              ^^^^^^^^^
+db/schema.rb:59:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:60:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:61:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "task_id"
+              ^^^^^^^^^
+db/schema.rb:62:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "cached_scoped_subscribe_votes_total", default: 0
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:63:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "cached_scoped_subscribe_votes_score", default: 0
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:64:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "cached_scoped_subscribe_votes_up", default: 0
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:65:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "cached_scoped_subscribe_votes_down", default: 0
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:66:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "cached_weighted_subscribe_score", default: 0
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:67:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "cached_weighted_subscribe_total", default: 0
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:68:13: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.float "cached_weighted_subscribe_average", default: 0.0
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:69:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["user_id"], name: "index_comments_on_user_id"
+             ^^^^^^^^^
+db/schema.rb:69:32: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["user_id"], name: "index_comments_on_user_id"
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:72:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "pg_search_documents", force: :cascade do |t|
+               ^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:73:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text "content"
+           ^^^^^^^^^
+db/schema.rb:74:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "searchable_type"
+             ^^^^^^^^^^^^^^^^^
+db/schema.rb:75:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "searchable_id"
+             ^^^^^^^^^^^^^^^
+db/schema.rb:76:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:77:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:78:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:78:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
+             ^^^^^^^^^^^^^^^^^
+db/schema.rb:78:33: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
+                                ^^^^^^^^^^^^^^^
+db/schema.rb:78:57: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:81:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "ratings", force: :cascade do |t|
+               ^^^^^^^^^
+db/schema.rb:82:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "score"
+              ^^^^^^^
+db/schema.rb:83:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "user_id"
+              ^^^^^^^^^
+db/schema.rb:84:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "task_id"
+              ^^^^^^^^^
+db/schema.rb:85:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:86:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:89:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "solved_tasks", force: :cascade do |t|
+               ^^^^^^^^^^^^^^
+db/schema.rb:90:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "user_id"
+              ^^^^^^^^^
+db/schema.rb:91:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "task_id"
+              ^^^^^^^^^
+db/schema.rb:92:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:93:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:96:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "subjects", force: :cascade do |t|
+               ^^^^^^^^^^
+db/schema.rb:97:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "name"
+             ^^^^^^
+db/schema.rb:98:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:99:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:100:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["name"], name: "index_subjects_on_name"
+             ^^^^^^
+db/schema.rb:100:29: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["name"], name: "index_subjects_on_name"
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:103:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "taggings", id: :serial, force: :cascade do |t|
+               ^^^^^^^^^^
+db/schema.rb:104:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "tag_id"
+              ^^^^^^^^
+db/schema.rb:105:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "taggable_type"
+             ^^^^^^^^^^^^^^^
+db/schema.rb:106:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "taggable_id"
+              ^^^^^^^^^^^^^
+db/schema.rb:107:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "tagger_type"
+             ^^^^^^^^^^^^^
+db/schema.rb:108:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "tagger_id"
+              ^^^^^^^^^^^
+db/schema.rb:109:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "context", limit: 128
+             ^^^^^^^^^
+db/schema.rb:110:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at"
+               ^^^^^^^^^^^^
+db/schema.rb:111:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "tenant", limit: 128
+             ^^^^^^^^
+db/schema.rb:112:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["context"], name: "index_taggings_on_context"
+             ^^^^^^^^^
+db/schema.rb:112:32: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["context"], name: "index_taggings_on_context"
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:113:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:113:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+             ^^^^^^^^
+db/schema.rb:113:24: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+                       ^^^^^^^^^^^^^
+db/schema.rb:113:39: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+                                      ^^^^^^^^^^^^^^^
+db/schema.rb:113:56: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+                                                       ^^^^^^^^^
+db/schema.rb:113:67: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+                                                                  ^^^^^^^^^^^
+db/schema.rb:113:80: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+                                                                               ^^^^^^^^^^^^^
+db/schema.rb:113:102: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+                                                                                                     ^^^^^^^^^^^^^^
+db/schema.rb:113:121: C: [Correctable] Layout/LineLength: Line is too long. [129/120]
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+                                                                                                                        ^^^^^^^^^
+db/schema.rb:114:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+             ^^^^^^^^
+db/schema.rb:114:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:115:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["taggable_id", "taggable_type", "context"], name: "taggings_taggable_context_idx"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:115:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_id", "taggable_type", "context"], name: "taggings_taggable_context_idx"
+             ^^^^^^^^^^^^^
+db/schema.rb:115:29: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_id", "taggable_type", "context"], name: "taggings_taggable_context_idx"
+                            ^^^^^^^^^^^^^^^
+db/schema.rb:115:46: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_id", "taggable_type", "context"], name: "taggings_taggable_context_idx"
+                                             ^^^^^^^^^
+db/schema.rb:115:64: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_id", "taggable_type", "context"], name: "taggings_taggable_context_idx"
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:116:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:116:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+             ^^^^^^^^^^^^^
+db/schema.rb:116:29: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+                            ^^^^^^^^^^^^^^^
+db/schema.rb:116:46: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+                                             ^^^^^^^^^^^
+db/schema.rb:116:59: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+                                                          ^^^^^^^^^
+db/schema.rb:116:77: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+                                                                            ^^^^^^^^^^^^^^
+db/schema.rb:117:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
+             ^^^^^^^^^^^^^
+db/schema.rb:117:36: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:118:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
+             ^^^^^^^^^^^^^^^
+db/schema.rb:118:38: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:119:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:119:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+             ^^^^^^^^^^^
+db/schema.rb:119:27: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+                          ^^^^^^^^^^^^^
+db/schema.rb:119:49: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:120:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
+             ^^^^^^^^^^^
+db/schema.rb:120:34: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:121:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tenant"], name: "index_taggings_on_tenant"
+             ^^^^^^^^
+db/schema.rb:121:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["tenant"], name: "index_taggings_on_tenant"
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:124:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "tags", id: :serial, force: :cascade do |t|
+               ^^^^^^
+db/schema.rb:125:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "name"
+             ^^^^^^
+db/schema.rb:126:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at"
+               ^^^^^^^^^^^^
+db/schema.rb:127:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at"
+               ^^^^^^^^^^^^
+db/schema.rb:128:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "taggings_count", default: 0
+              ^^^^^^^^^^^^^^^^
+db/schema.rb:129:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["name"], name: "index_tags_on_name", unique: true
+             ^^^^^^
+db/schema.rb:129:29: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["name"], name: "index_tags_on_name", unique: true
+                            ^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:132:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "tasks", force: :cascade do |t|
+               ^^^^^^^
+db/schema.rb:133:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "title"
+             ^^^^^^^
+db/schema.rb:134:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text "answers"
+           ^^^^^^^^^
+db/schema.rb:135:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "user_id"
+              ^^^^^^^^^
+db/schema.rb:136:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:137:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:138:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "subject"
+             ^^^^^^^^^
+db/schema.rb:139:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["user_id"], name: "index_tasks_on_user_id"
+             ^^^^^^^^^
+db/schema.rb:139:32: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["user_id"], name: "index_tasks_on_user_id"
+                               ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:142:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "users", force: :cascade do |t|
+               ^^^^^^^
+db/schema.rb:143:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "email", default: "", null: false
+             ^^^^^^^
+db/schema.rb:143:32: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "email", default: "", null: false
+                               ^^
+db/schema.rb:144:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "encrypted_password", default: "", null: false
+             ^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:144:45: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "encrypted_password", default: "", null: false
+                                            ^^
+db/schema.rb:145:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "reset_password_token"
+             ^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:146:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "reset_password_sent_at"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:147:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "remember_created_at"
+               ^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:148:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:149:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:150:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "provider"
+             ^^^^^^^^^^
+db/schema.rb:151:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "uid"
+             ^^^^^
+db/schema.rb:152:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "name"
+             ^^^^^^
+db/schema.rb:153:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text "image"
+           ^^^^^^^
+db/schema.rb:154:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean "superadmin_role", default: false
+              ^^^^^^^^^^^^^^^^^
+db/schema.rb:155:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean "user_role", default: true
+              ^^^^^^^^^^^
+db/schema.rb:156:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["email"], name: "index_users_on_email", unique: true
+             ^^^^^^^
+db/schema.rb:156:30: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["email"], name: "index_users_on_email", unique: true
+                             ^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:157:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+             ^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:157:45: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:160:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "votes", force: :cascade do |t|
+               ^^^^^^^
+db/schema.rb:161:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "votable_type"
+             ^^^^^^^^^^^^^^
+db/schema.rb:162:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "votable_id"
+             ^^^^^^^^^^^^
+db/schema.rb:163:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "voter_type"
+             ^^^^^^^^^^^^
+db/schema.rb:164:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "voter_id"
+             ^^^^^^^^^^
+db/schema.rb:165:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean "vote_flag"
+              ^^^^^^^^^^^
+db/schema.rb:166:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "vote_scope"
+             ^^^^^^^^^^^^
+db/schema.rb:167:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "vote_weight"
+              ^^^^^^^^^^^^^
+db/schema.rb:168:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:169:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", precision: 6, null: false
+               ^^^^^^^^^^^^
+db/schema.rb:170:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:170:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+             ^^^^^^^^^^^^
+db/schema.rb:170:28: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+                           ^^^^^^^^^^^^^^
+db/schema.rb:170:44: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+                                           ^^^^^^^^^^^^
+db/schema.rb:170:65: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:170:121: C: [Correctable] Layout/LineLength: Line is too long. [123/120]
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+                                                                                                                        ^^^
+db/schema.rb:171:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:171:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
+             ^^^^^^^^^^^^^^
+db/schema.rb:171:30: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
+                             ^^^^^^^^^^^^
+db/schema.rb:171:51: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:172:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:172:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+             ^^^^^^^^^^
+db/schema.rb:172:26: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+                         ^^^^^^^^^^^^
+db/schema.rb:172:40: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+                                       ^^^^^^^^^^^^
+db/schema.rb:172:61: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:173:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:173:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
+             ^^^^^^^^^^^^
+db/schema.rb:173:28: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
+                           ^^^^^^^^^^
+db/schema.rb:173:47: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:176:19: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:176:49: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+                                                ^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:176:81: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+                                                                                ^^^^^^^^^
+db/schema.rb:177:19: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:177:53: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:177:85: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+                                                                                    ^^^^^^^^^
+db/schema.rb:178:19: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "taggings", "tags"
+                  ^^^^^^^^^^
+db/schema.rb:178:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "taggings", "tags"
+                              ^^^^^^
+db/seeds.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file should contain all the record creation needed to seed the database with its default values.
+^
+spec/rails_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file is copied to spec/ when you run 'rails generate rspec:install'
+^
+spec/rails_helper.rb:6:7: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+abort("The Rails environment is running in production mode!") if Rails.env.production?
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/spec_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file was generated by the `rails generate rspec:install` command. Conventionally, all
+^
+spec/spec_helper.rb:49:1: C: [Correctable] Style/BlockComments: Do not use block comments.
+=begin ...
+^^^^^^
+test/application_system_test_case.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/application_system_test_case.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/channels/application_cable/connection_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/channels/application_cable/connection_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/channels/application_cable/connection_test.rb:3:7: C: [Correctable] Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/channels/room_channel_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/channels/room_channel_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/comments_controller_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/controllers/comments_controller_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/pages_controller_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/controllers/pages_controller_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/pages_controller_test.rb:4:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get home" do
+       ^^^^^^^^^^^^^^^^^
+test/controllers/ratings_controller_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/controllers/ratings_controller_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/tasks_controller_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/controllers/tasks_controller_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/controllers/users_controller_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:4:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get show" do
+       ^^^^^^^^^^^^^^^^^
+test/models/comment_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/models/comment_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/models/like_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/models/like_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/models/rating_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/models/rating_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/models/solved_task_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/models/solved_task_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/models/subject_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/models/subject_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/models/task_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/models/task_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/models/user_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/models/user_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/test_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+ENV['RAILS_ENV'] ||= 'test'
+^
+test/test_helper.rb:2:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "../config/environment"
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+test/test_helper.rb:3:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "rails/test_help"
+        ^^^^^^^^^^^^^^^^^
+test/test_helper.rb:5:7: C: [Correctable] Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+class ActiveSupport::TestCase
+      ^^^^^^^^^^^^^^^^^^^^^^^
+
+107 files inspected, 661 offenses detected, 594 offenses auto-correctable

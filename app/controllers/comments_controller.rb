@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :find_task
-  before_action :find_comment, only: [:like, :unlike, :dislike, :undislike, :destroy]
+  before_action :find_comment, only: %i[like unlike dislike undislike destroy]
 
   def create
     @comment = @task.comments.new comment_params
@@ -16,24 +16,23 @@ class CommentsController < ApplicationController
   end
 
   def like
-    unless current_user.liked? @comment
-      @comment.liked_by current_user
-    else
+    if current_user.liked? @comment
       @comment.unliked_by current_user
+    else
+      @comment.liked_by current_user
     end
 
-    render "vote.js.erb" 
+    render 'vote.js.erb'
   end
 
-
   def dislike
-    unless current_user.disliked? @comment
-      @comment.disliked_by current_user
-    else
+    if current_user.disliked? @comment
       @comment.undisliked_by current_user
+    else
+      @comment.disliked_by current_user
     end
 
-    render "vote.js.erb" 
+    render 'vote.js.erb'
   end
 
   def destroy
