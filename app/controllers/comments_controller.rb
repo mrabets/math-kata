@@ -7,7 +7,13 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     if @comment.save
-      ActionCable.server.broadcast("room_channel_#{@task.id}", { message: "#{@comment.message}" })   
+      ActionCable.server.broadcast("room_channel_#{@task.id}", { 
+        message: @comment.message,
+        name: User.find(@comment.user_id).name.nil? ? User.find(@comment.user_id).email : User.find(@comment.user_id).name,
+        time: helpers.time_ago_in_words(@comment.created_at),
+        image_src: User.find(@comment.user_id).image.nil? ? "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" : User.find(@comment.user_id).image,
+        like_count: @comment.weighted_score,
+      })   
     end
   end
 

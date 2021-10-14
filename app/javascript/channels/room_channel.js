@@ -5,7 +5,6 @@ document.addEventListener('turbolinks:load', () => {
 
   consumer.subscriptions.create({ channel: "RoomChannel", room_id: room_id },  {
     connected() {
-      console.log("Connected with room id: " + room_id)
     },
 
     disconnected() {
@@ -13,25 +12,37 @@ document.addEventListener('turbolinks:load', () => {
     },
 
     received(data) {
-      // Called when there's incoming data on the websocket for this channel
-      console.log(data)
-      $(`#msg-${room_id}`).append('<div class="message"> ' + data.message + '</div>')
-
-      // this.appendLine(data)  
+      this.appendLine(data)  
     },
 
-    //  appendLine(data) {      
-    //   const html = this.createLine(data)
-    //   const element = document.getElementById(`msg-${room_id}`)
-    //   element.insertAdjacentHTML("beforeend", html)
-    // },
+     appendLine(data) {      
+      const html = this.createLine(data)
+      const element = document.getElementById(`msg-${room_id}`)
+      element.insertAdjacentHTML("beforeend", html)
+    },
 
-    // createLine(data) {
-    //   return `
-    //     <div class="message"> 
-    //       ${data.message}
-    //     </div>
-    //   `
-    // }
+    createLine(data) {
+      return `
+        <div id="comments-media" class="media">
+         <p class="float-end">
+         <small>${data.time}</small><br>
+        </p>
+          <div class="d-flex align-items-center">
+            <div class="flex-shrink-0">
+              <img class="rounded-circle" 
+                src="${data.image_src}""
+              width="40">
+            </div>
+            <div class="flex-grow-1 ms-3">             
+              <span>${data.name}</span>    
+            </div>
+          </div>
+
+          <div class="mx-auto" style="width: 700px;">
+            <i><p id="comment-text" class="comment-text"> ${data.message}<br></p></i>
+          </div> 
+        </div>
+      `
+    }
   });
 })

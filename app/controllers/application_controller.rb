@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :set_theme
   around_action :switch_locale
+  protect_from_forgery with: :null_session
 
   def set_theme
     if params[:theme].present?
