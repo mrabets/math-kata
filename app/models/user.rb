@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-  validates :email, :password, presence: true
+  # validates :email, :password, presence: true
 
   has_many :tasks
   has_many :solved_tasks
   has_many :ratings
   acts_as_voter
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook google_oauth2]

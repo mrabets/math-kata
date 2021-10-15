@@ -2,7 +2,9 @@ class Task < ApplicationRecord
   include PgSearch
 
   validates :title, :condition, :answers, :subject, presence: true
-  validates :answers, answers: true
+  validates :title, length: { in: 2...60 }
+
+  # validates :answers, answers: true
 
   belongs_to :user
   has_many   :comments
