@@ -36,7 +36,6 @@ class TasksController < ApplicationController
   end
 
   def create
-    flash[:success] = params
     @task = current_user.tasks.build task_params
     @task.answers.delete!(' ')
 
