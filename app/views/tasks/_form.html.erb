@@ -6,10 +6,14 @@
   <div class="col-md-8">
     <%= form.label t('tasks.title'), class: 'form-label' %>
     <%= form.text_field :title, class: 'form-control' %><br>
+  </div>
 
+  <div class="col-md-10">
     <%= form.label t('tasks.condition'), class: 'form-label' %><br>
     <%= form.rich_text_area :condition %><br>
+  </div>
 
+  <div class="col-md-4">
     <%= form.label t('tasks.answers'), class: 'form-label' %>
     <%= form.text_field :answers, class: 'form-control' %>
     <small class="text-muted"><%= t('tasks.seperate_the_answers_by') %></small>
@@ -17,7 +21,7 @@
 
   <div class="col-md-3">
     <%= form.label t('tasks.subject'), class: 'form-label' %>
-    <%= form.select :subject, options_for_select(Subject.all.map(&:name)), { include_blank: true }, class: "form-select" %><br>
+    <%= form.select :subject, options_for_select(Subject.all.map(&:name)), { include_blank: false }, class: "form-select" %><br>
 
     <%= form.label "Tags", class: 'form-label' %>
     <%= form.text_field :tag_list, class: 'form-control' %>
