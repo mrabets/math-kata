@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :find_task
-  before_action :find_comment, only: %i[like unlike dislike undislike destroy]
+  before_action :find_comment, only: %w(like unlike dislike undislike destroy)
 
   def create
     @comment = @task.comments.new comment_params

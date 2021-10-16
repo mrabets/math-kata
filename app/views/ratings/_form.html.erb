@@ -1,6 +1,10 @@
 <%= form_with(model: [@task, @task.ratings.build]) do |form| %>
 	<div class="d-flex">
-		<div class="flex-shrink-0" id = "rating-form" data-score = "<%= @task.ratings.average(:score)  %>"></div>
+		<div class="flex-shrink-0" 
+				 id = "rating-form" 
+				 data-score = "<%= average_score @task %>">
+		</div>
+
 		<div class="flex-grow-1 ms-3">
 			<%= form.submit t('tasks.rate'), class: "btn btn-warning btn-sm" %>
 		</div>

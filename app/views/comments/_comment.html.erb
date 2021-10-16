@@ -1,13 +1,14 @@
 <div id="comments-media" class="media">
- <p class="float-end">
-  <small><%= time_ago_in_words(comment.created_at) %></small><br>
-</p>
+  <p class="float-end">
+    <small><%= time_ago_in_words(comment.created_at) %></small><br>
+  </p>
+
   <div class="d-flex align-items-center">
     <div class="flex-shrink-0">
-      <img class="rounded-circle" src="<%= User.find(comment.user_id).image %>" width="40">
+      <img class="rounded-circle" src="<%= user_image comment %>" width="40">
     </div>
     <div class="flex-grow-1 ms-3">
-      <span><%= link_to User.find(comment.user_id).name, User.find(comment.user_id) %></span>    
+      <span><%= user_name_link comment %></span>    
     </div>
   </div>
 
@@ -18,7 +19,7 @@
     <%= render 'comments/like_count', comment: comment %>
     <%= render 'comments/dislike_link', comment: comment %>
 
-    <% if current_user && User.find(comment.user_id) == current_user %>
+    <% if current_user && user(comment) == current_user %>
       <%= link_to task_comment_path(@task, comment), method: :delete do %>
         <i class="fas fa-trash-alt"></i>
       <% end %>

@@ -1,16 +1,15 @@
-<div class="form-group">
-  <div class="col-md-3">
-      <%= form_tag tasks_path, method: :get, role: 'search', remote: false do %>
-        
-        <div class="input-group">
-          <%= text_field_tag :query, params[:query], placeholder: t('tasks.enter_search_term'), class: 'form-control' %><br>
+<div class="form-group col-md-3">
+  <%= form_tag tasks_path, method: :get, role: 'search', remote: false do %>
+    
+    <div class="input-group">
+      <%= text_field_tag :query, params[:query], placeholder: t('tasks.enter_search_term'),
+       class: 'form-control' %><br>
 
-          <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-              <i class="fas fa-search"></i>
-          <% end %>
-        </div><br>
-        
-        <%= link_to t('tasks.show_all'), tasks_path, class: "btn btn-warning btn-sm" %>
+      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+        <i class="fas fa-search"></i>
       <% end %>
-  </div>
+    </div><br>
+    
+    <%= link_to t('tasks.show_all'), tasks_path, class: "btn btn-warning btn-sm" %>
+  <% end %>
 </div><br>  

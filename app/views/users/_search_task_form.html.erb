@@ -1,20 +1,22 @@
-<%= search_form_for @q, url: search_user_path(@user),
-                        html: { method: :post } do |f| %>
-<div class="d-flex flex-column align-items-center text-center">
-  <div class="flex-shrink-0">       
-    <div class="input-group">   	 
-    	<%= f.search_field :title_or_subject_cont, placeholder: t('tasks.enter_search_term'), class: 'form-control' %>
+<%= search_form_for @q, url: search_user_path(@user), html: { method: :post } do |f| %>
+  <div class="d-flex flex-column align-items-center text-center">
+
+    <div class="flex-shrink-0">       
+      <div class="input-group">   	 
+      	<%= f.search_field :title_or_subject_cont, placeholder: t('tasks.enter_search_term'),
+         class: 'form-control' %>
+         
       	<%= button_tag(type: "submit", class: "btn btn-primary") do %>
-              <i class="fas fa-search"></i>
-         <% end %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      </div>
+    </div><br>
+
+    <div class="d-flex flex-column align-items-center text-center">  
+      <div class="flex-shrink-0"> 
+        <%= link_to t('tasks.show_all'), @user, class: "btn btn-info btn-sm" %>
+        <%= link_to t('tasks.new_task'), new_task_path, class: "btn btn-success btn-sm" %>
+      </div>
+    </div>
   </div>
-</div>
-<br>
-<div class="d-flex flex-column align-items-center text-center">  
-  <div class="flex-shrink-0"> 
-    <%= link_to t('tasks.show_all'), @user, class: "btn btn-info btn-sm" %>
-    <%= link_to t('tasks.new_task'), new_task_path, class: "btn btn-success btn-sm" %>
-  </div>
-</div>
-</div>
 <% end %><br>

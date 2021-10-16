@@ -1,11 +1,15 @@
 <div class="col-lg-8">
   <article>
     <header class="mb-4">
-        <h1 class="fw-bolder mb-1"><%= @task.title %></h1>
-        <div class="text-muted fst-italic mb-2">Added on <%= @task.created_at.strftime("%d %b %Y, %H:%M")
- %> by <%= link_to get_user_by_task_id(@task).name, get_user_by_task_id(@task) %> </div>
-        <%= link_to @task.subject, subject_path(@task.subject), class: "badge bg-secondary text-decoration-none link-light" %>
+      <h1 class="fw-bolder mb-1"><%= @task.title %></h1>
+      <div class="text-muted fst-italic mb-2">
+        Added on <%= created_date @task %>
+        by <%= user_name_link @task %> 
+      </div>
+
+      <%= subject_link @task %>
    </header>
+
     <section class="mb-5">
         <p class="fs-5 mb-4"><%= @task.condition %></p>
     </section>
@@ -13,66 +17,54 @@
     <% unless @task.tags.blank? %>
     <section>
       <p>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
-        <path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/>
-        <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
-      </svg>
-
-      <%= @task.tags.map { |tag| link_to(tag, tag_path(tag.name)) }.join(', ').html_safe  %>
-      
-    </p>
+        <i class="fas fa-tags"></i>
+        <%= tags @task  %> 
+      </p>
     </section>
     <% end %><br>
 
     <% if @task.user_id == current_user.try(:id) %>
-      <%= link_to t('tasks.edit'), edit_task_path(@task), class: 'btn btn-warning btn-sm' %>
-      <%= link_to t('tasks.delete'), task_path(@task), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
-    <% elsif current_user %>
-
-      <% if current_user.solved_tasks.find_by(task_id: @task.id).nil?%>
-        <hr><br>
-        <h2 class="fw-light">
-            <%= t('tasks.solve_task') %>
-        </h2><br>
-        <%= render 'tasks/answer_form.html.erb' %>
-      <% end %>
+      <%= edit_link @task %>
+      <%= delete_link @task %>
+    <% elsif current_user && no_answer?(@task) %> <hr><br>   
+      <h2 class="fw-light"> 
+        <%= t('tasks.solve_task') %> 
+      </h2><br>
+         
+      <%= render 'tasks/answer_form.html.erb' %>
     <% end %>
 
-    <section class="rating-section">
-      <br><br>
-      <% if current_user && current_user.ratings.find_by(task_id: @task.id).nil? %>
-          <%= render 'ratings/form' %>
-        <% else %>
-          <%= render 'ratings/rating', task: @task %>
-      <% end %>
-      <br><br>
+    <section class="rating-section"><br><br>  
+      <% if current_user && no_rating?(@task) %>
+        <%= render 'ratings/form' %>
+      <% else %>
+        <%= render 'ratings/rating', task: @task %>
+      <% end %> 
+      <br><br>   
     </section>
     
     <section class="comment-section">
+      <div id="room-id" data-room-id="<%= @task.id %>"> 
+        <h2 class="fw-light">
+            <%= t('comments.comments') %> : <%= comment_count @task %> 
+        </h2><br>
 
-      <div id="room-id" data-room-id="<%= @task.id %>">
+        <div class="container">
+          <div class="row">           
+              <div id="comments-list" class="comments-list">
+                <% unless comment_count(@task).zero? %>
+                  <%= render @task.comments %>
+                <% end %>   
 
-       
-          <h2 class="fw-light">
-              <%= t('comments.comments') %> : <%= @task.comments.count %> 
-          </h2><br>
-          <div class="container">
-            <div class="row">           
-                <div id="comments-list" class="comments-list">
-                   <% unless @task.comments.count == 0 %>
-                    <%= render @task.comments %>
-                  <% end %>
-                  
-                  <div id="msg-<%= @task.id %>"></div>
-                </div>  
-            </div>
+                <div id="msg-<%= @task.id %>"></div>
+              </div>  
           </div>
-        
-          
+        </div>
+              
         <% if current_user %>
         <div class="comment-form"><br>
-            <h2 class="fw-light"><%= t('comments.leave_a_reply') %></h2>
-             <%= render 'comments/form' %>
+          <h2 class="fw-light"><%= t('comments.leave_a_reply') %></h2>
+           <%= render 'comments/form' %>
         </div>
         <% end %>
 

@@ -25,6 +25,7 @@ en:
   tasks:
     new_task: "New Task"
     add_task: "Add Task"
+    edit_task: "Edit Task"
     edit: "Edit"
     delete: "Delete"
     title: "Title"

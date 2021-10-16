@@ -14,26 +14,26 @@
   <body class="d-flex flex-column min-vh-100 <%= cookies[:theme] %>" data-turbolinks="false">
     <main class="flex-shrink-0">
       <div class="container">
-      <%= render 'layouts/header' %>
+        <%= render 'layouts/header' %>
 
-      <% if notice %>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <%= notice %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      <% elsif alert %>
-        <div class="alert alert-danger "><%= alert %></div>
-      <% else %>
-        <% flash.each do |message_type, message| %>
-          <div class="alert alert-<%= message_type %> alert-dismissible fade show" role="alert">
-            <%= message %>
+        <% if notice %>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <%= notice %>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
+        <% elsif alert %>
+          <div class="alert alert-danger "><%= alert %></div>
+        <% else %>
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %> alert-dismissible fade show" role="alert">
+              <%= message %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
 
-      <%= yield %>
-    </div>
+        <%= yield %>
+      </div>
     </main>
 
     <%= render 'layouts/footer' %>
