@@ -20,7 +20,7 @@ class TasksController < ApplicationController
     @answer = params[:answer]
 
     unless @answer.blank?
-      if helpers.correct_answer?(@answer, @task.id)
+      if correct_answer? @answer
         current_user.solved_tasks.create! task_id: @task.id
         flash[:success] = 'Correct answer'
       else
@@ -37,7 +37,6 @@ class TasksController < ApplicationController
 
   def create
     @task = current_user.tasks.build task_params
-    @task.answers.delete!(' ')
 
     if @task.save
       flash[:success] = 'Your task has successfully added'
@@ -50,8 +49,6 @@ class TasksController < ApplicationController
   def edit; end
 
   def update
-    @task.answers.delete!(' ')
-
     if @task.update task_params
       flash[:success] = 'Your task has successfully updated'
       redirect_to @task
@@ -66,6 +63,10 @@ class TasksController < ApplicationController
   end
 
   private
+
+  def correct_answer?(answer)
+    @task.answers.split(';').any?(answer)
+  end
 
   def find_task
     @task = Task.find params[:id]

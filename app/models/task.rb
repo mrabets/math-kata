@@ -4,6 +4,8 @@ class Task < ApplicationRecord
   validates :title, :condition, :answers, :subject, presence: true
   validates :title, length: { in: 2...60 }, uniqueness: true
 
+  before_save :normalize_answers
+
   belongs_to :user
   has_many   :comments
   has_many :ratings
@@ -17,4 +19,10 @@ class Task < ApplicationRecord
                                using: {
                                  tsearch: { prefix: true, any_word: true }
                                }
+
+  private
+
+  def normalize_answers
+    self.answers.try(:delete!, ' ')
+  end
 end

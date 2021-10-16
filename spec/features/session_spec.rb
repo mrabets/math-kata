@@ -1,11 +1,8 @@
 RSpec.describe 'Session process', type: :system do
-
-  describe "The log in process", type: :feature do
-    
+  describe 'The log in process', type: :feature do
     let(:user) { User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password') }
-    
 
-    it "logins me in" do
+    it 'logins me in' do
       visit '/d/users/sign_in'
 
       fill_in 'Email', with: 'user@example.com'
@@ -16,8 +13,8 @@ RSpec.describe 'Session process', type: :system do
     end
   end
 
-  describe "The sign up process", type: :feature do
-    it "signups me in" do
+  describe 'The sign up process', type: :feature do
+    it 'signups me in' do
       visit '/d/users/sign_up'
 
       fill_in 'Email', with: 'user2@example.com'
@@ -29,11 +26,10 @@ RSpec.describe 'Session process', type: :system do
     end
   end
 
-  describe "The log in process", type: :feature do
-    
+  describe 'The log out process', type: :feature do
     let(:user) { User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password') }
 
-    it "logouts me in" do
+    it 'logouts me in' do
       visit '/d/users/sign_in'
 
       fill_in 'Email', with: 'user@example.com'
@@ -42,7 +38,7 @@ RSpec.describe 'Session process', type: :system do
       click_button 'Log in'
 
       click_button 'user@example.com'
-      click_link 'Log out'    
+      click_link 'Log out'
 
       expect(page).to have_content 'Signed out successfully.'
     end

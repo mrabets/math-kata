@@ -48,8 +48,4 @@ module TasksHelper
   def subjects
     Subject.all.map(&:name)
   end
-
-  def correct_answer?(current_answer, task_id)
-    Task.find(task_id).answers.split(';').any?(current_answer)
-  end
 end

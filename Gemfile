@@ -5,6 +5,23 @@ ruby '3.0.2'
 
 gem 'rubocop', require: false
 
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+gem 'cancancan'
+gem 'devise-i18n'
+gem 'rails_admin', '~> 2.0'
+gem 'rails-i18n'
+gem 'ransack'
+gem 'figaro'
+gem 'jquery-rails'
+gem 'azure-storage-blob', require: false
+gem 'acts_as_votable'
+gem 'pg_search'
+gem 'acts-as-taggable-on', '~> 8.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record
@@ -59,26 +76,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-gem 'devise'
-gem 'omniauth-facebook'
-gem 'omniauth-github'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-rails_csrf_protection'
-
-gem 'cancancan'
-gem 'devise-i18n'
-gem 'rails_admin', '~> 2.0'
-gem 'rails-i18n'
-
-gem 'ransack'
-
-gem 'figaro'
-gem 'jquery-rails'
-
-gem 'azure-storage-blob', require: false
-
-gem 'acts_as_votable'
-gem 'pg_search'
-
-gem 'acts-as-taggable-on', '~> 8.0'
