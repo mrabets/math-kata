@@ -107,6 +107,11 @@ GEM
       devise (>= 4.8.0)
     diff-lcs (1.4.4)
     erubi (1.10.0)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     faraday (1.8.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -334,6 +339,8 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    shoulda-matchers (5.0.0)
+      activesupport (>= 5.2.0)
     spring (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -387,6 +394,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   devise-i18n
+  factory_bot_rails
   figaro
   jbuilder (~> 2.7)
   jquery-rails
@@ -408,6 +416,7 @@ DEPENDENCIES
   rubocop-rspec
   sass-rails (>= 6)
   selenium-webdriver
+  shoulda-matchers (~> 5.0)
   spring
   turbolinks (~> 5)
   tzinfo-data

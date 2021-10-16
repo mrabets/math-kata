@@ -4,20 +4,10 @@
 </p>
   <div class="d-flex align-items-center">
     <div class="flex-shrink-0">
-      <img class="rounded-circle" 
-      <% unless User.find(comment.user_id).image.nil? %>
-        src="<%= User.find(comment.user_id).image %>"
-      <% else %>
-        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-      <% end %>
-      width="40">
+      <img class="rounded-circle" src="<%= User.find(comment.user_id).image %>" width="40">
     </div>
     <div class="flex-grow-1 ms-3">
-      <% unless User.find(comment.user_id).name.nil? %>
-        <span><%= User.find(comment.user_id).name %></span>    
-      <% else %>
-        <span><%= User.find(comment.user_id).email %></span>   
-      <% end %>  
+      <span><%= link_to User.find(comment.user_id).name, User.find(comment.user_id) %></span>    
     </div>
   </div>
 

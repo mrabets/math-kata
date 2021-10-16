@@ -2,19 +2,12 @@ class Task < ApplicationRecord
   include PgSearch
 
   validates :title, :condition, :answers, :subject, presence: true
-  validates :title, length: { in: 2...60 }
-
-  # validates :answers, answers: true
+  validates :title, length: { in: 2...60 }, uniqueness: true
 
   belongs_to :user
   has_many   :comments
-
-  acts_as_taggable_on :tags
-
   has_many :ratings
-
-  has_many_attached :images
-
+  acts_as_taggable_on :tags
   has_rich_text :condition
 
   pg_search_scope :search_for, against: %i[title subject], associated_against: {

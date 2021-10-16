@@ -11,7 +11,7 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="d-flex flex-column min-vh-100 <%= cookies[:theme] %>">
+  <body class="d-flex flex-column min-vh-100 <%= cookies[:theme] %>" data-turbolinks="false">
     <main class="flex-shrink-0">
       <div class="container">
       <%= render 'layouts/header' %>

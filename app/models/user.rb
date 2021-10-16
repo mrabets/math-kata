@@ -1,10 +1,12 @@
 class User < ApplicationRecord
-  # validates :email, :password, presence: true
+  validates :image, :name, presence: true
 
   has_many :tasks
   has_many :solved_tasks
   has_many :ratings
   acts_as_voter
+
+  after_initialize :default_values
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
@@ -28,5 +30,12 @@ class User < ApplicationRecord
         user.email = data['email']
       end
     end
+  end
+
+  private
+
+  def default_values
+    self.image ||= "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+    self.name ||= "User"
   end
 end
