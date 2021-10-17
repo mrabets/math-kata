@@ -10,7 +10,7 @@ RSpec.describe Task, type: :model do
   end
 
   describe 'validations' do
-    let(:task) { create(:task) }
+    subject(:task) { build(:task) }
 
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:answers) }
@@ -18,7 +18,7 @@ RSpec.describe Task, type: :model do
     it { should validate_presence_of(:condition) }
 
     it do
-      expect(subject).to validate_length_of(:title).is_at_least(2).is_at_most(59)
+      expect(task).to validate_length_of(:title).is_at_least(2).is_at_most(59)
     end
 
     it { should validate_uniqueness_of(:title) }

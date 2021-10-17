@@ -27,6 +27,6 @@ Rails.application.routes.draw do
     get 'tags/:tag', to: 'tasks#index', as: :tag
     get 'subjects/:subject', to: 'tasks#index', as: :subject
 
-    post '/tasks/:id', to: 'tasks#answer'
+    post '/tasks/:id', to: 'tasks#answer', as: :answer
   end
 end

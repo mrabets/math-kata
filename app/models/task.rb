@@ -23,6 +23,6 @@ class Task < ApplicationRecord
   private
 
   def normalize_answers
-    self.answers.try(:delete!, ' ')
+    answers.try(:delete!, ' ')
   end
 end

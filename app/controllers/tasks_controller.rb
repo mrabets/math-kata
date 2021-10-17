@@ -36,7 +36,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = current_user.tasks.build task_params
+    @task = current_user.tasks.new task_params
 
     if @task.save
       flash[:success] = 'Your task has successfully added'

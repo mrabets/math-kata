@@ -9,6 +9,8 @@ RSpec.describe User, type: :model do
   end
 
   describe 'validations' do
+    subject(:user) { build(:user) }
+
     it { should validate_presence_of(:image) }
     it { should validate_presence_of(:name) }
   end
