@@ -18,7 +18,7 @@ RSpec.describe Task, type: :model do
     it { should validate_presence_of(:condition) }
 
     it do
-      should validate_length_of(:title).is_at_least(2).is_at_most(59)
+      expect(subject).to validate_length_of(:title).is_at_least(2).is_at_most(59)
     end
 
     it { should validate_uniqueness_of(:title) }

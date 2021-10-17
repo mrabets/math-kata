@@ -7,8 +7,8 @@ class Task < ApplicationRecord
   before_save :normalize_answers
 
   belongs_to :user
-  has_many   :comments
-  has_many :ratings
+  has_many   :comments, dependent: :destroy
+  has_many :ratings, dependent: :destroy
   acts_as_taggable_on :tags
   has_rich_text :condition
 

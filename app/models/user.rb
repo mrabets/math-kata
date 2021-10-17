@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   validates :image, :name, presence: true
 
-  has_many :tasks
-  has_many :solved_tasks
-  has_many :ratings
+  has_many :tasks, dependent: :destroy
+  has_many :solved_tasks, dependent: :destroy
+  has_many :ratings, dependent: :destroy
   acts_as_voter
 
   after_initialize :default_values

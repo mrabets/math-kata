@@ -10,7 +10,7 @@ RSpec.describe Rating, type: :model do
     it { should validate_presence_of(:score) }
 
     it do
-      should validate_numericality_of(:score).is_greater_than_or_equal_to(1).is_less_than_or_equal_to(5)
+      expect(subject).to validate_numericality_of(:score).is_greater_than_or_equal_to(1).is_less_than_or_equal_to(5)
     end
   end
 end

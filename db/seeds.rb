@@ -6,45 +6,44 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create!({ 
-  name: 'Admin',
-  email: 'admin@gmail.com',
-  password: 'password',
-  password_confirmation: 'password',
-  superadmin_role: true,
-})
+user = User.create!({
+                      name: 'Admin',
+                      email: 'admin@gmail.com',
+                      password: 'password',
+                      password_confirmation: 'password',
+                      superadmin_role: true
+                    })
 
 Subject.create!([{
-  name: 'Geometry'
-},
-{
-  name: 'Algebra'
-},
-{
-  name: 'Arithmetic'
-},
-{
-  name: 'Trigonometry'
-},
-{
-  name: 'Calculus'
-},
-{
-  name: 'Logic'
-},
-{
-  name: 'Number theory'
-},
-{
-  name: 'Computer Science'
-},
-{
-  name: 'Cryptography'
-},
-{
-  name: 'Probability theory'
-},
-]) 
+                  name: 'Geometry'
+                },
+                 {
+                   name: 'Algebra'
+                 },
+                 {
+                   name: 'Arithmetic'
+                 },
+                 {
+                   name: 'Trigonometry'
+                 },
+                 {
+                   name: 'Calculus'
+                 },
+                 {
+                   name: 'Logic'
+                 },
+                 {
+                   name: 'Number theory'
+                 },
+                 {
+                   name: 'Computer Science'
+                 },
+                 {
+                   name: 'Cryptography'
+                 },
+                 {
+                   name: 'Probability theory'
+                 }])
 
 task = Task.new(
   title: 'The perimeter of triangle',
@@ -53,7 +52,7 @@ task = Task.new(
   subject: 'Geometry',
   condition: '<div class="trix-content"> <div>A triangle has a <em>perimeter</em> of 50. If 2 of its sides are <strong>equal</strong> and the third side is 5 more than the equal sides.<br><br> </div><div><action-text-attachment content-type="image" url="https://www.onlinemathlearning.com/image-files/geometry-problem-triangle-1.gif" width="168" height="111" caption="Perimeter of triangle"><figure class="attachment attachment--preview"> <img width="168" height="111" src="https://www.onlinemathlearning.com/image-files/geometry-problem-triangle-1.gif"> <figcaption class="attachment__caption"> Perimeter of triangle </figcaption> </figure></action-text-attachment></div><div> <br>What is the length of the third <strong><em>side</em></strong>?</div> </div>'
 )
-task.tag_list.add(['basic', 'figures'])
+task.tag_list.add(%w[basic figures])
 task.save
 
 task = Task.new(
@@ -63,7 +62,7 @@ task = Task.new(
   subject: 'Algebra',
   condition: '<div class="trix-content"> <div>Given the equation:<br><br> </div><blockquote><em>5 (- 3 x - 2) - (x - 3) = - 4 (4 x + 5) + 13</em></blockquote> </div>'
 )
-task.tag_list.add(['code', 'basic'])
+task.tag_list.add(%w[code basic])
 task.save
 
 task = Task.new(
@@ -76,6 +75,16 @@ task = Task.new(
 task.tag_list.add(['high level', 'hard', 'code'])
 task.save
 
+tags = %w[code basic figures hard easy long]
 
-
-
+5.times do
+  task = Task.new(
+    title: Faker::Lorem.sentence(word_count: 5, random_words_to_add: 4),
+    answers: '5;5.1;4.9',
+    user_id: user.id,
+    subject: Subject.all.sample.name,
+    condition: " <div class='trix-content'> #{Faker::Lorem.paragraph(sentence_count: rand(7..20))} </div>"
+  )
+  task.tag_list.add(tags.sample(2))
+  task.save
+end

@@ -19,7 +19,7 @@ class TasksController < ApplicationController
   def answer
     @answer = params[:answer]
 
-    unless @answer.blank?
+    if @answer.present?
       if correct_answer? @answer
         current_user.solved_tasks.create! task_id: @task.id
         flash[:success] = 'Correct answer'

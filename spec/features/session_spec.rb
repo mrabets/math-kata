@@ -1,6 +1,6 @@
 RSpec.describe 'Session process', type: :system do
   describe 'The log in process', type: :feature do
-    let(:user) { User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password') }
+    before(:each) { User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password') }
 
     it 'logins me in' do
       visit '/d/users/sign_in'
@@ -27,7 +27,7 @@ RSpec.describe 'Session process', type: :system do
   end
 
   describe 'The log out process', type: :feature do
-    let(:user) { User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password') }
+    before(:each) { User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password') }
 
     it 'logouts me in' do
       visit '/d/users/sign_in'
